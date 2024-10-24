@@ -164,17 +164,17 @@ $conn->close();
               <i class="fas fa-eye text-4xl text-blue-500"></i> <!-- Vision Icon -->
             </div>
             <h3 class="text-xl font-semibold mb-2">Vision</h3>
-            <p class="text-gray-600 mb-4">Our vision is to be a premier institution for nursing sciences, shaping the future of healthcare with innovative training.</p>
+            <p class="text-gray-600 mb-4">To produce competent Nurses that will provide comprehensive and quality health services to humanity with the fear of God, passion and integrity.</p>
             <a href="about.php" class="text-blue-500 hover:none">Read More &rarr;</a>
           </div>
-    
+
           <!-- Mission Card -->
           <div class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
             <div class="mb-4">
               <i class="fas fa-bullseye text-4xl text-green-500"></i> <!-- Mission Icon -->
             </div>
             <h3 class="text-xl font-semibold mb-2">Mission</h3>
-            <p class="text-gray-600 mb-4">Our mission is to provide comprehensive nursing education that empowers students to deliver quality patient care.</p>
+            <p class="text-gray-600 mb-4">To advance the profession of nursing by imparting sound knowledge and skills to produce efficient Nurse called to reveal the healing love of Jesus to those in need.</p>
             <a href="about.php" class="text-green-500 hover:none">Read More &rarr;</a>
           </div>
     
@@ -194,7 +194,7 @@ $conn->close();
               <i class="fas fa-book text-4xl text-red-500"></i> <!-- History Icon -->
             </div>
             <h3 class="text-xl font-semibold mb-2">History</h3>
-            <p class="text-gray-600 mb-4">Since our founding in 2023, we have continuously evolved to meet the changing needs of the nursing profession.</p>
+            <p class="text-gray-600 mb-4">The Catholic Archdiocese of Ibadan (CAI) College of Nursing, Oluyoro began as School of Midwifery in 1957 to meet the existing need for well trained nurses and midwives.</p>
             <a href="about.php" class="text-red-500 hover:none">Read More &rarr;</a>
           </div>
         </div>
