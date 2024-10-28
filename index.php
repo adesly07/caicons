@@ -39,12 +39,12 @@ if ($result->num_rows > 0) {
 }
 
 // Fetch about data
-$sql = "SELECT * FROM about LIMIT 1"; // Fetch only one row for the About Us section
+$sql = "SELECT * FROM home LIMIT 1"; // Fetch only one row for the About Us section
 $result = $conn->query($sql);
-$about_data = null;
+$home_data = null;
 
 if ($result->num_rows > 0) {
-    $about_data = $result->fetch_assoc();
+    $home_data = $result->fetch_assoc();
 }
 // Fetch about application
 $sql = "SELECT * FROM applicatn LIMIT 1"; // Fetch only one row for the Application section
@@ -129,28 +129,18 @@ $conn->close();
         </div>
     </section>
     <section class="bg-cover-section py-1 px-1 md:px-1 text-white">
-        <div class="flex flex-col md:flex-row items-center justify-between shadow-lg rounded-lg p-6">
+        <div class="flex flex-col md:flex-row align-text-top justify-between shadow-lg rounded-lg p-6">
           <!-- Column 1: Logo -->
           <div class="flex flex-col md: mb-4 md:mb-0">
             <img src="./assets/images/about_logo.png" alt="Logo">
-            <h1 class="text-xl font-bold mb-2">About Our College</h1>
+            <h1 class="text-xl font-bold mb-2">WELCOME TO CAICONS</h1>
           </div>
-          
           <!-- Column 2: Description and Read More Button -->
-          <div class="w-full md:w-2/3 text-center md:text-left">
+          <div class="w-full md:w-2/3 md:text-left">
             <p class="text-white mb-6 justify-between">
-            <?php 
-                // Truncate content to 150 characters and add "Read More" link
-                $content = $about_data['content'];
-                if (strlen($content) > 1000) {
-                    echo substr($content, 0, 1000) . '...' . "<p>" .
-                    '<a href="about.php" class="bg-white text-sky-500 px-4 py-2 rounded-lg hover:bg-sky-200 hover:text-white transition duration-300 ease-in-out">
-                     Read More
-                    </a>';
-                } else {
-                    echo $content;
-                }
-                ?>
+              <?php 
+                echo $home_data['content'];
+              ?>
             </p>
           </div>
         </div>
@@ -232,11 +222,13 @@ $conn->close();
               <ul class="space-y-4">
                 <li><a href="news_details.php?id=<?php echo $post['id']; ?>" class="hover:none">CAICONS News</a></li>
                 <hr class="border-gray-200">
-                <li><a href="portal/" class="hover:none">CAICONS Portal</a></li>
+                <li><a href="#" class="hover:none">CAICONS Portal</a></li>
                 <hr class="border-gray-200">
                 <li><a href="gallery.php" class="hover:none">Gallery</a></li>
                 <hr class="border-gray-200">
                 <li><a href="ict.php" class="hover:none">ICT Centre</a></li>
+                <hr class="border-gray-200">
+                <li><a href="library.php" class="hover:none">Library</a></li>
               </ul>
           </div>
 

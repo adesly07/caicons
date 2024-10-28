@@ -79,7 +79,7 @@
                 <ul>
                   <li><a href="administration.php" class="hover:text-sky-500">Administration</a></li>
                   <li><a href="#management" class="hover:text-sky-500">Management</a></li>
-                  <li><a href="#" class="hover:text-sky-500">xxxxx</a></li>
+                  <li><a href="g_council.php" class="hover:text-sky-500">Governing Council</a></li>
                   <li><a href="#" class="hover:text-sky-500">xxxxx</a></li>
                   <li><a href="#" class="hover:text-sky-500">xxxxx</a></li>
                 </ul>

@@ -12,8 +12,18 @@
                         </a>
                     </li>
                     <li class="my-4">
+                        <a href="edit_addr.php?id=1" class="flex items-center space-x-2 hover:text-sky-400">
+                            <i class="fas fa-file-alt"></i> <span>Welcome Address</span>
+                        </a>
+                    </li>
+                    <li class="my-4">
                         <a href="edit_about.php?id=1" class="flex items-center space-x-2 hover:text-sky-400">
                             <i class="fas fa-file-alt"></i> <span>About Us</span>
+                        </a>
+                    </li>
+                    <li class="my-4">
+                        <a href="add_gcouncil.php" class="flex items-center space-x-2 hover:text-sky-400">
+                            <i class="fas fa-file-alt"></i> <span>Governing Council</span>
                         </a>
                     </li>
                     <li class="my-4">

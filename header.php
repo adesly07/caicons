@@ -11,10 +11,10 @@
           <nav class="hidden md:flex space-x-8">
             <a href="index.php" class="text-white hover:text-gray-600">Home</a>
             <a href="about.php" class="text-white hover:text-gray-600">About Us</a>
-            <a href="academics.php" class="text-white hover:text-gray-600">Academics</a>
+            <a href="g_council.php" class="text-white hover:text-gray-600">Governing Council</a>
             <a href="administration.php" class="text-white hover:text-gray-600">Administration</a>
+            <a href="academics.php" class="text-white hover:text-gray-600">Academics</a>
             <a href="admission.php" class="text-white hover:text-gray-600">Admission</a>
-            <a href="library.php" class="text-white hover:text-gray-600">Lbrary</a>
             <a href="#contact" class="text-white hover:text-gray-600">Contact Us</a>
           </nav>
     
