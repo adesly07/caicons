@@ -55,7 +55,7 @@
             <a href="#" class="text-2xl font-bold">
               <img src="./assets/images/header_logo2.png" alt="Logo" class="mb-4 w-40">
             </a>
-            <p class="mt-2 text-white">&copy; CAICONS, 2023-2024. All rights reserved.</p>
+            <p class="mt-2 text-white">&copy; CAICONS, 2023-<?php echo date("Y"); ?>. All rights reserved.</p>
             <p><a href ="#">Powered by CAICONS ICT Unit</a></p>
           </div>
     

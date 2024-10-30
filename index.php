@@ -121,7 +121,7 @@ $conn->close();
                   <?php echo $apply_data['content']; ?>
                 </p>
                 <div class="mt-6">
-                  <a href="#" class="bg-sky-400 text-white px-4 py-2 rounded-lg hover:bg-sky-300 hover:text-white transition duration-300 ease-in-out">
+                  <a href="portal/applicant/index.php" class="bg-sky-400 text-white px-4 py-2 rounded-lg hover:bg-sky-300 hover:text-white transition duration-300 ease-in-out">
                       Apply Now
                   </a>
                 </div>
