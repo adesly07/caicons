@@ -58,6 +58,7 @@ $conn->close();
         <!-- Invoice Title -->
         <div class="mb-4 text-right">
             <h2 class="text-lg font-bold"><?= $data['invoice_number'] ?></h2>
+            <h5 class="text-lg font-bold"><?= $data['a_date'] ?></h5>
            
         </div>
 

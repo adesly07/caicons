@@ -29,8 +29,8 @@ if ($result->num_rows > 0) {
     $newInvoiceNumber = 'INV-0000001';
 }
 
-    $sql = "INSERT INTO applicants (surname, first_name, middle_name, email, phone_number, nationality, invoice_number, course_id, sch_session)
-            VALUES ('$surname', '$first_name', '$middle_name', '$email', '$phone', '$nationality', '$newInvoiceNumber', '$course_id', '$section')";
+    $sql = "INSERT INTO applicants (surname, first_name, middle_name, email, phone_number, nationality, invoice_number, course_id, sch_session, p_status)
+            VALUES ('$surname', '$first_name', '$middle_name', '$email', '$phone', '$nationality', '$newInvoiceNumber', '$course_id', '$section', 'NOT CONFIRMED')";
 
     if ($conn->query($sql) === TRUE) {
         $_SESSION['invoice_number'] = $newInvoiceNumber;
