@@ -21,7 +21,7 @@ $department = $_SESSION['department'];
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss-jit-cdn@tailwindcss/latest/dist/tailwind.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
-<body class="bg-gray-100 h-screen flex flex-col">
+<body class="bg-white h-screen flex flex-col">
 
     <!-- Header Section -->
     <?php
@@ -59,6 +59,6 @@ $department = $_SESSION['department'];
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

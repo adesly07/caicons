@@ -24,12 +24,12 @@ $department = $_SESSION['department'];
 </head>
 <body class="bg-gray-100 h-screen flex flex-col">
 
-    <!-- Header Section -->
+        <!-- Header Section -->
         <?php
             include('header.php');
         ?>
 
-    <!-- Main Dashboard Layout -->
+        <!-- Main Dashboard Layout -->
     <div class="flex flex-grow overflow-hidden">
 
         <!-- Sidebar Menu -->
@@ -38,8 +38,8 @@ $department = $_SESSION['department'];
         ?>
 
         <!-- Main Content Area -->
-        <div class="w-full p-6 bg-white rounded-lg shadow-md">
-            <h2 class="text-2xl font-bold text-center mb-6">Wallets</h2>
+        <div class=" flex-grow p-6 overflow-auto bg-white">
+            <h2 class="text-xl font-bold text-center mb-6">Wallets</h2>
 
             <!-- Tabs for Staylites and Applicants -->
             <div class="flex space-x-2 mb-6">
@@ -87,6 +87,6 @@ $department = $_SESSION['department'];
     </div>
     
 
-    <script src="script2.js"></script>
+    <script src="js/script2.js"></script>
 </body>
 </html>

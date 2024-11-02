@@ -65,6 +65,6 @@ if ($result2->num_rows > 0) {
         <p id="successMessage" class="text-green-500 text-sm mt-4 hidden">Wallet updated successfully. Your registration number is: <span id="registrationNumber"></span></p>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
