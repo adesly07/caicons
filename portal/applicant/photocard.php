@@ -7,7 +7,7 @@ if (!isset($_SESSION['username'])) {
 }
 $username = $_SESSION['username'];
 $section = $_SESSION['s_session'];
-$newReceiptNumber = $_SESSION["receipt_number"];
+
 
 $sql = "SELECT * FROM applicants WHERE reg_num = '$username'";
 $result = $conn->query($sql);
@@ -24,7 +24,7 @@ if ($result2->num_rows > 0) {
     $row = $result2->fetch_assoc();
     $course = $row['course'];
 } 
-$sql3 = "SELECT * FROM payment WHERE receipt_number = '$newReceiptNumber'";
+$sql3 = "SELECT * FROM payment WHERE reg_num = '$username'";
 $result = $conn->query($sql3);
 
 if ($result->num_rows > 0) {
@@ -39,6 +39,14 @@ $contact_data = null;
 if ($result->num_rows > 0) {
     $contact_data = $result->fetch_assoc();
 }
+$sql3 = "SELECT * FROM applicant_documents WHERE reg_num = '$username'";
+$result = $conn->query($sql3);
+
+if ($result->num_rows > 0) {
+    $pic = $result->fetch_assoc();
+    $passport = $pic['passport'];
+    
+} 
 $conn->close();
 ?>
 
@@ -48,7 +56,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../cai.jpg" type="image/x-icon">
-    <title>CAICONS | APPLICATION RECEIPT</title>
+    <title>CAICONS | PHOTO CARD</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss-jit-cdn@tailwindcss/latest/dist/tailwind.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -66,46 +74,39 @@ $conn->close();
                 <p class="text-gray-600">Phone: <?php echo $contact_data['phone_number']; ?> | Email: <?php echo $contact_data['email_address']; ?></p>
             </div>
         </div>
+        
         <!-- Invoice Title -->
-        <div class="mb-4 text-center">
-            <h2 class="text-xl font-bold">APPLICATION FORM RECEIPT</h2>
+        <div class="mb-4 text-center border-b pb-4 mb-4">
+            <h2 class="text-xl font-bold">PHOTO CARD</h2>
            
         </div>
         <!-- Invoice Title -->
-        <div class="mb-4 text-right border-b pb-4 mb-4">
-            <h2 class="text-lg font-bold">Receipt No: <?= $pay['receipt_number'] ?></h2>
-            <h5 class="text-lg font-bold"><?= $pay['date_paid'] ?></h5>
-           
-        </div>
-
-        <!-- Student Details -->
-        <div class="border-b pb-4 mb-4">
-            <h3 class="text-xl font-bold">Student Details</h3>
-            <p><strong>Name:</strong> <?= $data['surname'] ?> <?= $data['first_name'] ?> <?= $data['middle_name'] ?></p>
-            <p><strong>Registration Number:</strong> <?= $data['reg_num'] ?></p>
-            <p><strong>Email:</strong> <?= $data['email'] ?></p>
-            <p><strong>Phone:</strong> <?= $data['phone_number'] ?></p>
-            <p><strong>Course:</strong> <?php echo $course; ?></p>
+        <div class="flex flex-row relative">
+            <div class="flex-item">
+                <p><strong>Name:</strong> <?= $data['surname'] ?> <?= $data['first_name'] ?> <?= $data['middle_name'] ?></p>
+                <p><strong>Registration Number:</strong> <?= $data['reg_num'] ?></p>
+                <p><strong>Course:</strong> <?php echo $course; ?></p>
+            </div>
+            <div class="flex-item absolute right-0">
+            <img src="<?php echo $passport; ?>" alt="Passport" class="w-20 h-20 rounded mr-20">
+            </div>
         </div>
         
-        <!-- Invoice Details -->
-        <div class="border-b pb-4 mb-4">
-            <h3 class="text-xl font-bold">Receipt Details</h3>
-            <p><strong>Application Amount(&#8358;): </strong> <?= number_format($pay['f_amount'], 2) ?></p>
-            <p><strong>Transaction Fee(&#8358;): </strong> <?= number_format($pay['t_fee'], 2) ?></p>
-            <p><strong>Total Amount Paid(&#8358;):</strong> <?= number_format($pay['f_amount'] + $pay['t_fee'], 2) ?></p>
-        </div>
-
         <!-- Payment Instructions -->
-        <div class="flex items-center justify-center border-b pb-4 mb-4">
-            <img src="../../assets/images/signature.png">
+        <div class="flex flex-col items-center justify-center border-b pb-4 mb-4">
+            <div class="flex-item">
+                <img src="../../assets/images/reg_sign.png">
+            </div>
+            <div class="flex-item">
+                <p class="text-sm">Registrar</p>
+            </div>
         </div>
 
         <!-- Action Button -->
         <div class="text-center">
-            <a href="logapp.php">Logout</a> | 
+            <a href="dashboard.php">Back</a> | 
             <button onclick="window.print()" class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600">
-                Print Receipt
+                Print Card
             </button>
         </div>
     </div>

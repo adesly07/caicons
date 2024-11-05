@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2024 at 03:44 PM
+-- Generation Time: Nov 05, 2024 at 03:29 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -180,6 +180,27 @@ INSERT INTO `current` (`id`, `s_category`, `s_semester`, `s_session`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `health_info`
+--
+
+CREATE TABLE `health_info` (
+  `id` int(11) NOT NULL,
+  `reg_num` varchar(20) NOT NULL,
+  `hasCondition` varchar(10) NOT NULL,
+  `conditionDetails` varchar(255) DEFAULT NULL,
+  `otherInfo` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `health_info`
+--
+
+INSERT INTO `health_info` (`id`, `reg_num`, `hasCondition`, `conditionDetails`, `otherInfo`) VALUES
+(1, 'CAICON/PF/24/0002', 'Yes', 'Typhoid', 'None for now');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `payment`
 --
 
@@ -205,6 +226,30 @@ CREATE TABLE `payment` (
 INSERT INTO `payment` (`id`, `paid_for`, `reg_num`, `course_id`, `invoice_number`, `receipt_number`, `f_amount`, `t_fee`, `t_amount`, `sch_session`, `p_status`, `date_paid`) VALUES
 (1, 'Application Form', 'CAICON/PF/24/0001', 1, 'INV-0000001', '0000001', 20000, 2000, 22000, '2025/2026', 'PAID', '2024-11-04 08:50:49'),
 (2, 'Application Form', 'CAICON/PF/24/0002', 2, 'INV-0000003', '0000002', 25000, 2000, 27000, '2025/2026', 'PAID', '2024-11-04 09:12:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `relatives`
+--
+
+CREATE TABLE `relatives` (
+  `id` int(11) NOT NULL,
+  `reg_num` varchar(20) NOT NULL,
+  `relative_type` varchar(20) NOT NULL,
+  `r_name` varchar(100) NOT NULL,
+  `r_address` varchar(255) NOT NULL,
+  `r_phone` varchar(15) NOT NULL,
+  `r_email` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `relatives`
+--
+
+INSERT INTO `relatives` (`id`, `reg_num`, `relative_type`, `r_name`, `r_address`, `r_phone`, `r_email`) VALUES
+(1, 'CAICON/PF/24/0002', 'Father', 'Adedigba Christopher', 'Ibadan', '08036764877', NULL),
+(2, 'CAICON/PF/24/0002', 'Mother', 'Adedigba Christiana', 'Ibadan', '08083737832', NULL);
 
 -- --------------------------------------------------------
 
@@ -331,9 +376,21 @@ ALTER TABLE `current`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `health_info`
+--
+ALTER TABLE `health_info`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `relatives`
+--
+ALTER TABLE `relatives`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -402,9 +459,21 @@ ALTER TABLE `current`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `health_info`
+--
+ALTER TABLE `health_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `relatives`
+--
+ALTER TABLE `relatives`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --

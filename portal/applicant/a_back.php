@@ -59,7 +59,7 @@ if ($result2->num_rows > 0) {
         <!-- Main Content Area -->
         <main class="flex-grow p-6 overflow-auto">
         <div class="w-full max-w-4xl bg-white rounded-lg shadow-lg p-6">
-            <h2 class="text-2xl font-bold text-center mb-6">School Attended Form</h2>
+            <h2 class="text-2xl font-bold text-center mb-6">School Attended</h2>
             <form id="schoolForm" method="POST" action="a_accback.php">
                 <div id="formContainer" class="space-y-4">
                     <!-- Template for school attended entry -->

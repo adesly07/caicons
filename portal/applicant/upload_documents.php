@@ -47,7 +47,7 @@ $stmt->bind_param(
 );
 
 if ($stmt->execute()) {
-    echo "<script>alert('Documents uploaded successfully'); window.location.href='others.php';</script>";
+    echo "<script>alert('Documents uploaded successfully'); window.location.href='pgui.php';</script>";
 } else {
     echo "Error: " . $stmt->error;
 }

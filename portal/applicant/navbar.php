@@ -5,7 +5,9 @@
         <a href="a_back.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Academic Background</a>
         <a href="result.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Results</a>
         <a href="doc_upload.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Documents Upload</a>
-        <a href="others.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Others</a>
+        <a href="pgui.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Parents/Guardian</a>
+        <a href="other_info.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Others</a>
+        <a href="photocard.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Print Documents</a>
         <a href="logout.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Logout</a>
     </nav>
 </aside>

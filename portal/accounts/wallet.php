@@ -76,6 +76,7 @@ $department = $_SESSION['department'];
                         <th class="py-3 px-6 text-left">Course</th>
                         <th class="py-3 px-6 text-left">Amount(&#8358;)</th>
                         <th class="py-3 px-6 text-left">Status</th>
+                        
                     </tr>
                 </thead>
                 <tbody class="text-gray-700 text-sm">

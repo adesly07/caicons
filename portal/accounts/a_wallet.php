@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])&&(!isset($_SESSION['department']))) {
 }
 $username = $_SESSION['username'];
 $department = $_SESSION['department'];
-$applicant_id = $_SESSION['applicant_id'];
+//$applicant_id = $_SESSION['applicant_id'];
 $inv = $_GET['invoice_number'];
 $_SESSION['invoice_number'] = $inv;
 $sql = "SELECT * FROM applicants WHERE invoice_number = '$inv'";
@@ -28,6 +28,15 @@ if ($result2->num_rows > 0) {
     $total = $f_amount + $t_fee;
 
 } 
+$sql3 = "SELECT * FROM payment WHERE invoice_number = '$inv'";
+        $result = $conn->query($sql3);
+        if ($result->num_rows > 0) {
+            $pay = $result->fetch_assoc();
+            $p_status = "<span class='text-green-600'>" . $pay['p_status'] . "</span>";
+            
+    }  else {
+        $p_status = "<span class='text-red-600'>UNPAID</span>";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,6 +60,7 @@ if ($result2->num_rows > 0) {
             <h3 class="text-gray-800">Invoice Number: <?php echo $inv; ?></h3>
             <p id="invoiceAmount" class="text-gray-600">Amount: <?php echo number_format($total,2); ?></p>
             <p id="invoiceDate" class="text-gray-600">Date: <?= $data['a_date'] ?></p>
+            <p id="invoiceDate" class="text-gray-600">Payment Status: <?php echo $p_status; ?></p>
         </div>
 
         <!-- Add Wallet Form -->

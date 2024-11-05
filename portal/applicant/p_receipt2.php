@@ -56,11 +56,17 @@ $conn->close();
 <body class="bg-gray-100">
     <div class="container mx-auto p-6 bg-white rounded-lg shadow-lg mt-10 max-w-3xl">
         <!-- College Details -->
-        <div class="text-center mb-6">
-            <h1 class="text-2xl font-bold">CAI COLLEGE OF NURSING SCIENCES</h1>
-            <p class="text-gray-600"><?php echo $contact_data['address']; ?></p>
-            <p class="text-gray-600">Phone: <?php echo $contact_data['phone_number']; ?> | Email: <?php echo $contact_data['email_address']; ?></p>
+        <div class="flex flex-row gap-10">
+            <div class="flex-item text-center">
+                <img src="../../assets/images/about_logo.png" alt="Logo">
+            </div>
+            <div class="flex-item text-center mb-6">
+                <h1 class="text-2xl font-bold">CAI COLLEGE OF NURSING SCIENCES</h1>
+                <p class="text-gray-600"><?php echo $contact_data['address']; ?></p>
+                <p class="text-gray-600">Phone: <?php echo $contact_data['phone_number']; ?> | Email: <?php echo $contact_data['email_address']; ?></p>
+            </div>
         </div>
+        
         <!-- Invoice Title -->
         <div class="mb-4 text-center">
             <h2 class="text-xl font-bold">APPLICATION FORM RECEIPT</h2>
@@ -92,8 +98,13 @@ $conn->close();
         </div>
 
         <!-- Payment Instructions -->
-        <div class="flex items-center justify-center border-b pb-4 mb-4">
-            <img src="../../assets/images/signature.png">
+        <div class="flex flex-col items-center justify-center border-b pb-4 mb-4">
+            <div class="flex-item">
+                <img src="../../assets/images/signature.png">
+            </div>
+            <div class="flex-item">
+                <p class="text-sm">Bursar</p>
+            </div>
         </div>
 
         <!-- Action Button -->

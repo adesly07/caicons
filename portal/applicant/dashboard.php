@@ -28,6 +28,14 @@ if ($result2->num_rows > 0) {
     $total = $f_amount + $t_fee;
 
 } 
+$sql3 = "SELECT * FROM applicant_documents WHERE reg_num = '$username'";
+$result = $conn->query($sql3);
+
+if ($result->num_rows > 0) {
+    $pic = $result->fetch_assoc();
+    $passport = $pic['passport'];
+    
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,9 +66,17 @@ if ($result2->num_rows > 0) {
 
         <!-- Main Content Area -->
         <main class="flex-grow p-6 overflow-auto">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Welcome <a href="#" class="text-green-600"><?= $data['first_name'] ?></a> to your Dashboard</h2>
-            <p class="text-gray-600">REGISTRATION NUMBER: <span class="text-green-600"><?php echo $username; ?></span></p>
-            <p class="text-gray-600 mb-6">PROPOSED COURSE: <span class="text-green-600"><?php echo $course; ?></span></p>
+            <div class="flex flex-row relative">
+                <div class="flex-item">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Welcome <a href="#" class="text-green-600"><?= $data['first_name'] ?></a> to your Dashboard</h2>
+                    <p class="text-gray-600">REGISTRATION NUMBER: <span class="text-green-600"><?php echo $username; ?></span></p>
+                    <p class="text-gray-600 mb-6">PROPOSED COURSE: <span class="text-green-600"><?php echo $course; ?></span></p>
+                </div>
+                <div class="flex-item absolute right-0">
+                    <img src="<?php echo $passport; ?>" alt="Passport" class="w-20 h-20 rounded-full mr-4">
+                </div>
+            </div>
+            
             <!-- Sample Content Section -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white p-4 shadow rounded-lg">

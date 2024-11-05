@@ -17,6 +17,7 @@ if ($result->num_rows > 0) {
         } else {
             $color="text-red-600";
         }
+        
         $sql2 = "SELECT * FROM courses where id = '$course_id'";
         $result2 = $conn->query($sql2);
         if ($result2->num_rows > 0) {
@@ -29,6 +30,7 @@ if ($result->num_rows > 0) {
         echo "<td class='py-3 px-6'>" . $row2['course'] . "</td>";
         echo "<td class='py-3 px-6'>" . $row2['f_amount'] + $row2['t_fee'] . "</td>";
         echo "<td class='py-3 px-6 $color'>" . $row['p_status'] . "</td>";
+        //echo "<td class='py-3 px-6 $color'>" . $pay['p_status'] . "</td>";
         echo "</tr>";
     }
 } else {

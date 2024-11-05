@@ -102,7 +102,7 @@ if ($result2->num_rows > 0) {
             </div>
 
         <!-- Display Uploaded Documents -->
-            <div id="uploadedFiles" class="max-w-lg mx-auto mt-6 p-4 bg-white rounded shadow-lg">
+            <div id="uploadedFiles" class="mx-auto mt-6 p-4 bg-white rounded shadow-lg">
                 <h2 class="text-xl font-bold mb-4 text-center">Uploaded Documents</h2>
             <div id="fileList" class="space-y-2">
                 <!-- JavaScript will insert uploaded file links here -->
@@ -121,7 +121,7 @@ if ($result2->num_rows > 0) {
             let fileLink = document.createElement('a');
             fileLink.href = file.path;
             fileLink.target = '_blank';
-            fileLink.classList.add('block', 'text-sky-400', 'hover:underline');
+            fileLink.classList.add('block', 'text-sky-400', 'hover:none');
             fileLink.textContent = file.label;
             fileList.appendChild(fileLink);
         });

@@ -1,34 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let sittingCount = 1;
+document.getElementById("addEntry").addEventListener("click", function () {
+    const formContainer = document.getElementById("formContainer");
+    const newEntry = document.querySelector(".school-entry").cloneNode(true);
 
-    document.getElementById("addSitting").addEventListener("click", function () {
-        sittingCount++;
-        const sittingContainer = document.createElement("div");
-        sittingContainer.classList.add("sitting", "mt-6");
-        sittingContainer.setAttribute("data-sitting", sittingCount);
+    // Clear the input fields in the new entry
+    newEntry.querySelectorAll("input").forEach(input => input.value = "");
 
-        sittingContainer.innerHTML = `
-            <h3 class="text-lg font-semibold mb-2">${sittingCount === 2 ? "Second Sitting" : `Sitting ${sittingCount}`}</h3>
-            <div class="mb-4">
-                <label for="examType${sittingCount}" class="block text-gray-700 font-semibold">Examination Type</label>
-                <select id="examType${sittingCount}" name="examType[]" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" required>
-                    <option value="WAEC">WAEC</option>
-                    <option value="NECO">NECO</option>
-                </select>
-            </div>
-            <div id="subjectsContainer${sittingCount}">
-                <h4 class="text-md font-semibold mb-2">Subjects</h4>
-                <div class="grid grid-cols-2 gap-4 mb-4">
-                    <div class="subject-row">
-                        <label class="text-gray-700">Subject:</label>
-                        <input type="text" name="subject${sittingCount}[]" class="w-full px-3 py-2 border rounded-md" required>
-                        <label class="text-gray-700">Grade:</label>
-                        <input type="text" name="grade${sittingCount}[]" class="w-full px-3 py-2 border rounded-md" required>
-                    </div>
-                </div>
-            </div>
-        `;
+    // Add event listener to the remove button in the new entry
+    newEntry.querySelector(".remove-entry").addEventListener("click", function () {
+        newEntry.remove();
+    });
 
-        document.getElementById("sittingsContainer").appendChild(sittingContainer);
+    formContainer.appendChild(newEntry);
+});
+
+// Attach event listener to the initial remove button
+document.querySelectorAll(".remove-entry").forEach(button => {
+    button.addEventListener("click", function () {
+        button.closest(".school-entry").remove();
     });
 });

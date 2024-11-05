@@ -27,7 +27,7 @@ $_SESSION['s_session'] = $section;
 
         <!-- Right Section: Login Form -->
         <div class="p-6 md:w-1/2">
-            <h2 class="text-2xl font-semibold text-center text-sky-600 mb-4">Student Login<?php echo $section; ?></h2>
+            <h2 class="text-2xl font-semibold text-center text-sky-600 mb-4">Student Login</h2>
             <form id="studentLoginForm" method="POST" action="student_login.php">
                 <div class="mb-4">
                     <label for="username" class="block text-gray-700 font-semibold">Registration Number</label>
