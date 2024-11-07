@@ -102,6 +102,10 @@ if ($result2->num_rows > 0) {
                         <input type="text" id="state_of_origin" name="state_of_origin" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required>
                     </div>
                     <div class="mb-4">
+                        <label for="lga" class="block text-gray-700 font-semibold">Local Government Area</label>
+                        <input type="text" id="lga" name="lga" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required>
+                    </div>
+                    <div class="mb-4">
                         <label for="contact_address" class="block text-gray-700 font-semibold">Permanent Contact Address</label>
                         <textarea id="contact_address" name="contact_address" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required></textarea>
                     </div>

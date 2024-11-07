@@ -102,8 +102,9 @@ $conn->close();
             <div class="flex-item">
                 <img src="../../assets/images/signature.png">
             </div>
-            <div class="flex-item">
-                <p class="text-sm">Bursar</p>
+            <div class="flex-item text-center">
+                <p class="text-sm"><em><?= $pay['date_paid'] ?></em></p>
+                <p class="text-sm font-bold">Bursar</p>
             </div>
         </div>
 

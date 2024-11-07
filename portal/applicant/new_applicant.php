@@ -99,8 +99,8 @@ include("../conx.php");
             <!-- Second Column: Action Buttons -->
             <!-- Action Buttons Column -->
             <div class="flex flex-col">
-                <button onclick="window.location.href='login.php'" class="w-3/4 bg-blue-500 text-white font-bold py-2 rounded-md mb-2">Login to Continue Application</button>
-                <button onclick="window.location.href='resend.php'" class="w-3/4 bg-yellow-500 text-white font-bold py-2 rounded-md">Resend Authentication Email</button>
+                <a href="login.php" target="_blank" class="w-3/4 text-center bg-blue-500 text-white font-bold py-2 rounded-md mb-2">Login to Continue Application</a>
+                <a href='resend.php' target="_blank" class="w-3/4 text-center bg-yellow-500 text-white font-bold py-2 rounded-md">Resend Authentication Email</a>
             </div>
 
         </div>

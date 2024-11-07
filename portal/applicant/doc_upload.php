@@ -77,7 +77,7 @@ if ($result2->num_rows > 0) {
 
                     <!-- Date of Birth Certificate -->
                     <div>
-                        <label class="block text-sm font-medium">Date of Birth Certificate</label>
+                        <label class="block text-sm font-medium">Birth Certificate</label>
                         <input type="file" name="birth_certificate" accept=".pdf,.jpg,.jpeg,.png" required
                             class="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:bg-blue-50 file:text-sky-700 hover:file:bg-blue-100">
                     </div>

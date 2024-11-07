@@ -92,6 +92,23 @@ if ($result->num_rows > 0) {
                     <p class="text-red-600">Pending</p>
                 </div>
             </div>
+            <div class="mt-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">ENTRY QUALIFICATION</h2>
+                <ul class="list-disc text-gray-600 ">
+                    <li class="mb-4">
+                        Entry qualification to College of Nursing Sciences as specified by the Nursing & Midwifery<br>
+                        Council is a minimum of Five(5) Credits which include English Language, Mathematics, Physics,<br>
+                        Chemistry, and Biology at WAEC/NECO at not more than two(2) sittings.
+                    </li>
+                    <li class="mb-4">
+                        Only successful cndidates will have further communication from the College Authority.
+                    </li>
+                    <li class="mb-4">
+                        Interview Centre is at the College Premises, Oluyoro.
+                    </li>
+                </ul>
+                
+            </div>
         </main>
     </div>
 

@@ -89,7 +89,7 @@ $conn->close();
                   <?php foreach($slides as $slide): ?>
                   <div class="w-full flex-shrink-0 relative">
                     <img src="slide_pix/<?php echo $slide['image_url']; ?>" class="w-full h-full object-cover" alt="Slide">
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
                         <div class="text-white text-center">
                           <h2 class="text-3xl font-bold"><?php echo $slide['overlay_title']; ?></h2>
                           <p class="mt-2"><?php echo $slide['overlay_text']; ?></p>
