@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2024 at 03:29 PM
+-- Generation Time: Nov 07, 2024 at 01:51 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -50,6 +50,7 @@ CREATE TABLE `applicants` (
   `hometown` varchar(100) NOT NULL,
   `a_address` text NOT NULL,
   `state_of_origin` varchar(100) NOT NULL,
+  `lga` varchar(50) NOT NULL,
   `contact_address` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -57,12 +58,12 @@ CREATE TABLE `applicants` (
 -- Dumping data for table `applicants`
 --
 
-INSERT INTO `applicants` (`applicant_id`, `reg_num`, `pwd`, `p_decr`, `w_amt`, `surname`, `first_name`, `middle_name`, `email`, `phone_number`, `nationality`, `sch_session`, `invoice_number`, `course_id`, `p_status`, `a_date`, `dob`, `sex`, `marital_status`, `hometown`, `a_address`, `state_of_origin`, `contact_address`) VALUES
-(1, 'CAICON/PF/24/0001', '$2y$10$HibGOLiU99hd/BC0G8rLAOoxgpewzrbbBVhry9azA1VLe91Dtn/Wm', '004D96ED', '0', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000001', 1, 'CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', 'Egbeda'),
-(2, '', '', '', '', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000002', 1, 'NOT CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', 'Egbeda'),
-(3, 'CAICON/PF/24/0002', '$2y$10$l9tXPtNoysdMLsLU0I7A3eGVY7ASFUY9CjGH.vhEmdXE0QXADRiP2', '23C8B3D2', '0', 'Adedigba', 'Mary', 'Yewande', 'mary@gmail.com', '08059605896', 'Nigerian', '2025/2026', 'INV-0000003', 2, 'CONFIRMED', '2024-11-04 11:29:45', '1999-07-25', 'female', 'single', 'Oro', 'Egbeda', 'Kwara', 'Egbeda'),
-(4, 'CAICON/PF/24/0003', '$2y$10$k.rsOQ9CeWGgSGVrJzj7POXKbqY/RTmmmIdvzVWuLCorZ/RO/DkS.', '35E3E984', '22000', 'Adedigba', 'Anthony', 'Folahan', 'thonyclaret@gmail.com', '08137428365', 'Nigerian', '2025/2026', 'INV-0000004', 1, 'CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', 'Egbeda'),
-(5, 'CAICON/PF/24/0001', '$2y$10$HibGOLiU99hd/BC0G8rLAOoxgpewzrbbBVhry9azA1VLe91Dtn/Wm', '004D96ED', '0', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000001', 1, 'CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', 'Egbeda');
+INSERT INTO `applicants` (`applicant_id`, `reg_num`, `pwd`, `p_decr`, `w_amt`, `surname`, `first_name`, `middle_name`, `email`, `phone_number`, `nationality`, `sch_session`, `invoice_number`, `course_id`, `p_status`, `a_date`, `dob`, `sex`, `marital_status`, `hometown`, `a_address`, `state_of_origin`, `lga`, `contact_address`) VALUES
+(1, 'CAICON/PF/24/0001', '$2y$10$HibGOLiU99hd/BC0G8rLAOoxgpewzrbbBVhry9azA1VLe91Dtn/Wm', '004D96ED', '0', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000001', 1, 'CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
+(2, '', '', '', '', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000002', 1, 'NOT CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
+(3, 'CAICON/PF/24/0002', '$2y$10$l9tXPtNoysdMLsLU0I7A3eGVY7ASFUY9CjGH.vhEmdXE0QXADRiP2', '23C8B3D2', '0', 'Adedigba', 'Mary', 'Yewande', 'mary@gmail.com', '08059605896', 'Nigerian', '2025/2026', 'INV-0000003', 2, 'CONFIRMED', '2024-11-04 11:29:45', '1999-07-25', 'female', 'single', 'Oro', 'Egbeda', 'Kwara', '', 'Egbeda'),
+(4, 'CAICON/PF/24/0003', '$2y$10$k.rsOQ9CeWGgSGVrJzj7POXKbqY/RTmmmIdvzVWuLCorZ/RO/DkS.', '35E3E984', '22000', 'Adedigba', 'Anthony', 'Folahan', 'thonyclaret@gmail.com', '08137428365', 'Nigerian', '2025/2026', 'INV-0000004', 1, 'CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
+(5, 'CAICON/PF/24/0001', '$2y$10$HibGOLiU99hd/BC0G8rLAOoxgpewzrbbBVhry9azA1VLe91Dtn/Wm', '004D96ED', '0', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000001', 1, 'CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda');
 
 -- --------------------------------------------------------
 
