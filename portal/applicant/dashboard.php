@@ -16,7 +16,13 @@ if ($result->num_rows > 0) {
     $course_id = $data['course_id'];
     $w_amt = $data['w_amt'];
     $inv = $data['invoice_number'];
+    $a_status = $data['a_status'];
 } 
+if($a_status == "PENDING" OR $a_status == "NOT ADMITTED"){
+    $color = "text-red-600";
+} else {
+    $color = "text-green-600";
+}
 $sql2 = "SELECT * FROM courses where id = '$course_id'";
 $result2 = $conn->query($sql2);
 
@@ -89,7 +95,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="bg-white p-4 shadow rounded-lg">
                     <h3 class="font-semibold text-lg text-gray-800">Admission Status</h3>
-                    <p class="text-red-600">Pending</p>
+                    <p class=<?php echo $color; ?>><?php echo $a_status; ?></p>
                 </div>
             </div>
             <div class="mt-6">
@@ -112,6 +118,6 @@ if ($result->num_rows > 0) {
         </main>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

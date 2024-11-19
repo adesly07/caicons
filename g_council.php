@@ -35,7 +35,7 @@ if ($result->num_rows > 0) {
  <?php include ("header.php"); ?>
     
     <section class="container mx-auto px-0 py-1  bg-gray-100">
-    <div class="container mx-auto p-6">
+    <div class="container mx-auto p-1">
         <!-- First row for the title -->
         <div id="title" class="text-center bg-white shadow-md rounded-md p-4 mb-1">
             <h1 class="text-3xl font-bold text-gray-800" id="content-title">MEMBERS OF THE GOVERNING COUNCIL</h1>

@@ -89,7 +89,7 @@
                 <hr>
                 <ul>
                   <li><a href="news_details" class="hover:text-sky-500">CAICONS News</a></li>
-                  <li><a href="#" class="hover:text-sky-500">CAICONS Portal</a></li>
+                  <li><a href="portal/students/index.php" target = "_blank" class="hover:text-sky-500">CAICONS Portal</a></li>
                   <li><a href="gallery.php" class="hover:text-sky-500">Gallery</a></li>
                   <li><a href="ict.php" class="hover:text-sky-500">ICT Centre</a></li>
                   <li><a href="#contact" class="hover:text-sky-500">Contact Us</a></li>

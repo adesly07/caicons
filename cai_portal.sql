@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2024 at 01:51 PM
+-- Generation Time: Nov 19, 2024 at 06:53 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `applicants` (
   `applicant_id` int(11) NOT NULL,
+  `a_status` varchar(15) NOT NULL,
   `reg_num` varchar(50) NOT NULL,
   `pwd` varchar(255) NOT NULL,
   `p_decr` varchar(255) NOT NULL,
@@ -58,12 +59,11 @@ CREATE TABLE `applicants` (
 -- Dumping data for table `applicants`
 --
 
-INSERT INTO `applicants` (`applicant_id`, `reg_num`, `pwd`, `p_decr`, `w_amt`, `surname`, `first_name`, `middle_name`, `email`, `phone_number`, `nationality`, `sch_session`, `invoice_number`, `course_id`, `p_status`, `a_date`, `dob`, `sex`, `marital_status`, `hometown`, `a_address`, `state_of_origin`, `lga`, `contact_address`) VALUES
-(1, 'CAICON/PF/24/0001', '$2y$10$HibGOLiU99hd/BC0G8rLAOoxgpewzrbbBVhry9azA1VLe91Dtn/Wm', '004D96ED', '0', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000001', 1, 'CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
-(2, '', '', '', '', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000002', 1, 'NOT CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
-(3, 'CAICON/PF/24/0002', '$2y$10$l9tXPtNoysdMLsLU0I7A3eGVY7ASFUY9CjGH.vhEmdXE0QXADRiP2', '23C8B3D2', '0', 'Adedigba', 'Mary', 'Yewande', 'mary@gmail.com', '08059605896', 'Nigerian', '2025/2026', 'INV-0000003', 2, 'CONFIRMED', '2024-11-04 11:29:45', '1999-07-25', 'female', 'single', 'Oro', 'Egbeda', 'Kwara', '', 'Egbeda'),
-(4, 'CAICON/PF/24/0003', '$2y$10$k.rsOQ9CeWGgSGVrJzj7POXKbqY/RTmmmIdvzVWuLCorZ/RO/DkS.', '35E3E984', '22000', 'Adedigba', 'Anthony', 'Folahan', 'thonyclaret@gmail.com', '08137428365', 'Nigerian', '2025/2026', 'INV-0000004', 1, 'CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
-(5, 'CAICON/PF/24/0001', '$2y$10$HibGOLiU99hd/BC0G8rLAOoxgpewzrbbBVhry9azA1VLe91Dtn/Wm', '004D96ED', '0', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000001', 1, 'CONFIRMED', '2024-11-04 11:25:28', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda');
+INSERT INTO `applicants` (`applicant_id`, `a_status`, `reg_num`, `pwd`, `p_decr`, `w_amt`, `surname`, `first_name`, `middle_name`, `email`, `phone_number`, `nationality`, `sch_session`, `invoice_number`, `course_id`, `p_status`, `a_date`, `dob`, `sex`, `marital_status`, `hometown`, `a_address`, `state_of_origin`, `lga`, `contact_address`) VALUES
+(1, 'NOT ADMITTED', 'CAICON/PF/24/0001', '$2y$10$HibGOLiU99hd/BC0G8rLAOoxgpewzrbbBVhry9azA1VLe91Dtn/Wm', '004D96ED', '0', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000001', 1, 'CONFIRMED', '2024-11-13 10:40:56', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
+(2, 'PENDING', '', '', '', '', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000002', 1, 'NOT CONFIRMED', '2024-11-13 09:32:31', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
+(3, 'ADMITTED', 'CAICON/PF/24/0002', '$2y$10$l9tXPtNoysdMLsLU0I7A3eGVY7ASFUY9CjGH.vhEmdXE0QXADRiP2', '23C8B3D2', '0', 'Adedigba', 'Mary', 'Yewande', 'mary@gmail.com', '08059605896', 'Nigerian', '2025/2026', 'INV-0000003', 2, 'CONFIRMED', '2024-11-13 10:21:09', '1999-07-25', 'female', 'single', 'Oro', 'Egbeda', 'Kwara', '', 'Egbeda'),
+(4, 'PENDING', 'CAICON/PF/24/0003', '$2y$10$k.rsOQ9CeWGgSGVrJzj7POXKbqY/RTmmmIdvzVWuLCorZ/RO/DkS.', '35E3E984', '22000', 'Adedigba', 'Anthony', 'Folahan', 'thonyclaret@gmail.com', '08137428365', 'Nigerian', '2025/2026', 'INV-0000004', 1, 'CONFIRMED', '2024-11-13 09:33:03', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda');
 
 -- --------------------------------------------------------
 
@@ -111,6 +111,46 @@ CREATE TABLE `applicant_results` (
 
 INSERT INTO `applicant_results` (`id`, `reg_num`, `exam_type_first_sitting`, `subject_first_sitting`, `exam_type_second_sitting`, `subject_second_sitting`, `created_at`) VALUES
 (1, 'CAICON/PF/24/0002', 'WAEC', '{\"Mathematics\":\"A1\",\"English Language\":\"B2\"}', 'WAEC', '{\"Mathematics\":\"B3\",\"English Language\":\"B3\"}', '2024-11-04 13:29:08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `billing`
+--
+
+CREATE TABLE `billing` (
+  `id` int(11) NOT NULL,
+  `item_names` varchar(15) NOT NULL,
+  `category` varchar(100) NOT NULL,
+  `sch_session` varchar(20) NOT NULL,
+  `amount` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `billing`
+--
+
+INSERT INTO `billing` (`id`, `item_names`, `category`, `sch_session`, `amount`) VALUES
+(1, 'School Fees', 'Tuition', '2024/2025', 500000),
+(2, 'School Fees', 'Library', '2024/2025', 15000),
+(3, 'School Fees', 'Accommodation', '2024/2025', 200000),
+(4, 'School Fees', 'Computer Training', '2024/2025', 20000),
+(5, 'School Fees', 'Examination fees and materials', '2024/2025', 80000),
+(6, 'School Fees', 'Caping Ceremony', '2024/2025', 5000),
+(7, 'School Fees', 'Accreditation fee', '2024/2025', 15000),
+(8, 'School Fees', 'Uniform (2 sets) & 2 sets of Scrub', '2024/2025', 80000),
+(9, 'School Fees', 'Procedure Manual / School Curriculum', '2024/2025', 40000),
+(10, 'School Fees', 'Florence Nightingale', '2024/2025', 10000),
+(11, 'School Fees', 'Bench fee', '2024/2025', 20000),
+(12, 'School Fees', 'Stationeries', '2024/2025', 10000),
+(13, 'School Fees', 'Sports', '2024/2025', 5000),
+(14, 'School Fees', 'ID card / Name tag', '2024/2025', 5000),
+(15, 'School Fees', 'Verification of one result', '2024/2025', 5000),
+(16, 'School Fees', 'Caution fees', '2024/2025', 10000),
+(17, 'School Fees', 'Record book of instruction', '2024/2025', 5000),
+(18, 'School Fees', 'Utilities', '2024/2025', 20000),
+(19, 'School Fees', 'NHIS', '2024/2025', 15000),
+(20, 'School Fees', 'Medical test', '2024/2025', 40000);
 
 -- --------------------------------------------------------
 
@@ -197,7 +237,8 @@ CREATE TABLE `health_info` (
 --
 
 INSERT INTO `health_info` (`id`, `reg_num`, `hasCondition`, `conditionDetails`, `otherInfo`) VALUES
-(1, 'CAICON/PF/24/0002', 'Yes', 'Typhoid', 'None for now');
+(1, 'CAICON/PF/24/0002', 'Yes', 'Typhoid', 'None for now'),
+(2, 'CAICON/PF/24/0001', 'No', '', 'none');
 
 -- --------------------------------------------------------
 
@@ -231,6 +272,26 @@ INSERT INTO `payment` (`id`, `paid_for`, `reg_num`, `course_id`, `invoice_number
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `payment_items`
+--
+
+CREATE TABLE `payment_items` (
+  `id` int(11) NOT NULL,
+  `item_name` varchar(255) NOT NULL,
+  `t_fee` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment_items`
+--
+
+INSERT INTO `payment_items` (`id`, `item_name`, `t_fee`) VALUES
+(1, 'Acceptance Fee', 2000),
+(2, 'School Fee', 2000);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `relatives`
 --
 
@@ -250,7 +311,9 @@ CREATE TABLE `relatives` (
 
 INSERT INTO `relatives` (`id`, `reg_num`, `relative_type`, `r_name`, `r_address`, `r_phone`, `r_email`) VALUES
 (1, 'CAICON/PF/24/0002', 'Father', 'Adedigba Christopher', 'Ibadan', '08036764877', NULL),
-(2, 'CAICON/PF/24/0002', 'Mother', 'Adedigba Christiana', 'Ibadan', '08083737832', NULL);
+(2, 'CAICON/PF/24/0002', 'Mother', 'Adedigba Christiana', 'Ibadan', '08083737832', NULL),
+(3, 'CAICON/PF/24/0001', 'Father', 'Adedigba C.I', 'Igboora', '08064405936', NULL),
+(4, 'CAICON/PF/24/0001', 'Mother', 'Adedigba C.A', 'Igboora', '07085362201', NULL);
 
 -- --------------------------------------------------------
 
@@ -274,7 +337,9 @@ CREATE TABLE `schools_attended` (
 
 INSERT INTO `schools_attended` (`id`, `reg_num`, `institution_name`, `place_country`, `from_year`, `to_year`, `qualification`) VALUES
 (1, 'CAICON/PF/24/0002', 'Bee Nur/Pry School', 'Ibadan', 2023, 2010, 'FLCE'),
-(2, 'CAICON/PF/24/0002', 'Adeola Secondary', 'Ibadan', 2011, 2016, 'SSCE');
+(2, 'CAICON/PF/24/0002', 'Adeola Secondary', 'Ibadan', 2011, 2016, 'SSCE'),
+(3, 'CAICON/PF/24/0001', 'Adegoke N/P ', 'Igboora', 1996, 1998, 'FLCE'),
+(4, 'CAICON/PF/24/0001', 'Igboora High School', 'Igboora', 1998, 2003, 'SSCE');
 
 -- --------------------------------------------------------
 
@@ -359,6 +424,12 @@ ALTER TABLE `applicant_results`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `billing`
+--
+ALTER TABLE `billing`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
@@ -386,6 +457,12 @@ ALTER TABLE `health_info`
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `payment_items`
+--
+ALTER TABLE `payment_items`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -442,6 +519,12 @@ ALTER TABLE `applicant_results`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `billing`
+--
+ALTER TABLE `billing`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
@@ -463,7 +546,7 @@ ALTER TABLE `current`
 -- AUTO_INCREMENT for table `health_info`
 --
 ALTER TABLE `health_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `payment`
@@ -472,16 +555,22 @@ ALTER TABLE `payment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `payment_items`
+--
+ALTER TABLE `payment_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `relatives`
 --
 ALTER TABLE `relatives`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `schools_attended`
 --
 ALTER TABLE `schools_attended`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sch_session`

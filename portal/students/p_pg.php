@@ -125,7 +125,7 @@ $conn->close();
 
         <!-- Action Button -->
         <div class="text-center">
-            <a href="p_doc.php">Back</a> | 
+            <a href="dashboard.php">Back</a> | 
             <button onclick="window.print()" class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600">
                 Print
             </button>

@@ -53,14 +53,14 @@ $department = $_SESSION['department'];
             <table class="min-w-full bg-white border" id="staylitesTable">
                 <thead class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                     <tr>
-                        <th class="py-3 px-6 text-left">ID</th>
+                        <th class="py-3 px-6 text-left">REGISTRATION NUMBER</th>
                         <th class="py-3 px-6 text-left">Name</th>
-                        <th class="py-3 px-6 text-left">Department</th>
+                        <th class="py-3 px-6 text-left">Phone Number</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-700 text-sm">
                     <!-- Rows populated by PHP (staylites data) -->
-                    <?php// include ('fetch_staylites.php'); ?>
+                    <?php include ('fetch_staylites.php'); ?>
                 </tbody>
             </table>
         </div>

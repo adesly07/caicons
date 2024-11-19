@@ -31,6 +31,7 @@ $contact_data = null;
 if ($result->num_rows > 0) {
     $contact_data = $result->fetch_assoc();
 }
+
 $sql3 = "SELECT * FROM applicant_documents WHERE reg_num = '$username'";
 $result = $conn->query($sql3);
 

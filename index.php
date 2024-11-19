@@ -222,7 +222,7 @@ $conn->close();
               <ul class="space-y-4">
                 <li><a href="news_details.php?id=<?php echo $post['id']; ?>" class="hover:none">CAICONS News</a></li>
                 <hr class="border-gray-200">
-                <li><a href="#" class="hover:none">CAICONS Portal</a></li>
+                <li><a href="portal/students/index.php" target = "_blank" class="hover:none">CAICONS Portal</a></li>
                 <hr class="border-gray-200">
                 <li><a href="gallery.php" class="hover:none">Gallery</a></li>
                 <hr class="border-gray-200">

@@ -57,7 +57,7 @@ if ($result->num_rows > 0) {
         $mydata[] = $row;
     }
 } else {
-    echo "0 results";
+    echo "<span class = 'text-red-600'>No record found for schools attended. Add it before printing.</span>";
 }
 $conn->close();
 ?>

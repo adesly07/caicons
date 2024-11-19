@@ -8,6 +8,6 @@
         <a href="c_pgui.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Parents/Guardian</a>
         <a href="c_info.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Others</a>
         <a href="p_doc.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Print Documents</a>
-        <a href="logout.php" class="block text-gray-700 py-2 px-4 rounded-md hover:bg-sky-100">Logout</a>
+        <a href="logout.php" class="block bg-red-500 text-white text-center py-2 px-4 rounded-md hover:bg-red-700">Logout</a>
     </nav>
 </aside>

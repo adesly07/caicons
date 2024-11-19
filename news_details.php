@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
 </head>
 <body>
 <?php include ("header.php"); ?>
-    <div class="container mx-auto p-6">
+    <div class="container mx-auto p-1">
         <!-- News Title -->
         <div class="text-center shadow-md rounded-md p-6 mb-6">
         <h1 class="text-3xl font-bold text-gray-800 mb-4">NEWS UPDATE</h1>

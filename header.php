@@ -20,7 +20,7 @@
     
           <!-- Portal Button Column -->
           <div class="flex-shrink-0 hidden md:flex">
-            <a href="#" class="text-sky-500 bg-white border border-white px-4 py-2 rounded-lg hover:bg-sky-300 hover:text-white">
+            <a href="portal/students/index.php" target = "_blank" class="text-sky-500 bg-white border border-white px-4 py-2 rounded-lg hover:bg-sky-300 hover:text-white">
               CAICONS Portal
             </a>
           </div>

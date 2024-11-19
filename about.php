@@ -83,17 +83,17 @@ $conn->close();
  <?php include ("header.php"); ?>
     
     <section class="container mx-auto px-0 py-1  bg-gray-100">
-    <div class="container mx-auto p-6">
-        <!-- First row for the title -->
-        <div id="title" class="text-center bg-white shadow-md rounded-md p-4 mb-1">
-            <h1 class="text-3xl font-bold text-gray-800" id="content-title">ABOUT US</h1>
-        </div>
+        <div class="container mx-auto p-1">
+            <!-- First row for the title -->
+            <div id="title" class="text-center bg-white shadow-md rounded-md p-4 mb-1">
+                <h1 class="text-3xl font-bold text-gray-800" id="content-title">ABOUT US</h1>
+            </div>
 
-        <!-- Second row for the content -->
-        <div id="content" class="bg-white shadow-md rounded-md p-6">
-            <p class="text-lg text-gray-700" id="content-body"><?php echo $about_data['content'];?></p>
+            <!-- Second row for the content -->
+            <div id="content" class="bg-white shadow-md rounded-md p-6">
+                <p class="text-lg text-gray-700" id="content-body"><?php echo $about_data['content'];?></p>
+            </div>
         </div>
-    </div>
     </section>
  
     

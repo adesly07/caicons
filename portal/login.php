@@ -23,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 case 'Accounts':
                     header('Location: accounts/acct_db.php');
                     break;
-                case 'Admission':
-                    header('Location: admission/adm_db.php');
+                case 'Exams and Records':
+                    header('Location: er/er_db.php');
                     break;
                 case 'Academics':
                     header('Location: academics/aca_db.php');
