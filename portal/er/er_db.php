@@ -8,6 +8,11 @@ if (!isset($_SESSION['username'])&&(!isset($_SESSION['department']))) {
 }
 $username = $_SESSION['username'];
 $department = $_SESSION['department'];
+$sql3 = "SELECT * FROM current where s_category = 'Applicant'";
+$result3 = $conn->query($sql3);
+$row3 = $result3->fetch_assoc();
+$section = $row3['s_session'];
+$_SESSION['s_session'] = $section;
 ?>
 <!DOCTYPE html>
 <html lang="en">

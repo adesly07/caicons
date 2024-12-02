@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2024 at 06:53 PM
+-- Generation Time: Dec 02, 2024 at 03:10 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -62,8 +62,8 @@ CREATE TABLE `applicants` (
 INSERT INTO `applicants` (`applicant_id`, `a_status`, `reg_num`, `pwd`, `p_decr`, `w_amt`, `surname`, `first_name`, `middle_name`, `email`, `phone_number`, `nationality`, `sch_session`, `invoice_number`, `course_id`, `p_status`, `a_date`, `dob`, `sex`, `marital_status`, `hometown`, `a_address`, `state_of_origin`, `lga`, `contact_address`) VALUES
 (1, 'NOT ADMITTED', 'CAICON/PF/24/0001', '$2y$10$HibGOLiU99hd/BC0G8rLAOoxgpewzrbbBVhry9azA1VLe91Dtn/Wm', '004D96ED', '0', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000001', 1, 'CONFIRMED', '2024-11-13 10:40:56', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
 (2, 'PENDING', '', '', '', '', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000002', 1, 'NOT CONFIRMED', '2024-11-13 09:32:31', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
-(3, 'ADMITTED', 'CAICON/PF/24/0002', '$2y$10$l9tXPtNoysdMLsLU0I7A3eGVY7ASFUY9CjGH.vhEmdXE0QXADRiP2', '23C8B3D2', '0', 'Adedigba', 'Mary', 'Yewande', 'mary@gmail.com', '08059605896', 'Nigerian', '2025/2026', 'INV-0000003', 2, 'CONFIRMED', '2024-11-13 10:21:09', '1999-07-25', 'female', 'single', 'Oro', 'Egbeda', 'Kwara', '', 'Egbeda'),
-(4, 'PENDING', 'CAICON/PF/24/0003', '$2y$10$k.rsOQ9CeWGgSGVrJzj7POXKbqY/RTmmmIdvzVWuLCorZ/RO/DkS.', '35E3E984', '22000', 'Adedigba', 'Anthony', 'Folahan', 'thonyclaret@gmail.com', '08137428365', 'Nigerian', '2025/2026', 'INV-0000004', 1, 'CONFIRMED', '2024-11-13 09:33:03', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda');
+(3, 'ADMITTED', 'CAICON/PF/24/0002', '$2y$10$l9tXPtNoysdMLsLU0I7A3eGVY7ASFUY9CjGH.vhEmdXE0QXADRiP2', '23C8B3D2', '116000', 'Adedigba', 'Mary', 'Yewande', 'mary@gmail.com', '08059605896', 'Nigerian', '2025/2026', 'INV-0000003', 2, 'CONFIRMED', '2024-11-21 09:32:02', '1999-07-25', 'female', 'single', 'Oro', 'Egbeda', 'Kwara', '', 'Egbeda'),
+(4, 'PENDING', 'CAICON/PF/24/0003', '$2y$10$k.rsOQ9CeWGgSGVrJzj7POXKbqY/RTmmmIdvzVWuLCorZ/RO/DkS.', '35E3E984', '22000', 'Adedigba', 'Anthony', 'Folahan', 'thonyclaret@gmail.com', '08137428365', 'Nigerian', '2025/2026', 'INV-0000004', 1, 'CONFIRMED', '2024-11-27 14:38:11', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda');
 
 -- --------------------------------------------------------
 
@@ -150,7 +150,9 @@ INSERT INTO `billing` (`id`, `item_names`, `category`, `sch_session`, `amount`) 
 (17, 'School Fees', 'Record book of instruction', '2024/2025', 5000),
 (18, 'School Fees', 'Utilities', '2024/2025', 20000),
 (19, 'School Fees', 'NHIS', '2024/2025', 15000),
-(20, 'School Fees', 'Medical test', '2024/2025', 40000);
+(20, 'School Fees', 'Medical test', '2024/2025', 40000),
+(22, 'Acceptance Fee', 'Acceptance Fee', '2024/2025', 50000),
+(23, 'School Fees', 'Development', '2025/2026', 100000);
 
 -- --------------------------------------------------------
 
@@ -196,6 +198,71 @@ INSERT INTO `courses` (`id`, `course`, `f_amount`, `t_fee`, `acceptance_fee`, `a
 (2, 'Public Health', '25000', '2000', '100000', '2000'),
 (4, 'Mid-wifery', '20000', '3000', '100000', '4000'),
 (5, 'Medical Lab', '20000', '2500', '120000', '3000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses_reg`
+--
+
+CREATE TABLE `courses_reg` (
+  `id` int(11) NOT NULL,
+  `course_code` varchar(10) NOT NULL,
+  `course_title` varchar(100) NOT NULL,
+  `units` int(11) NOT NULL,
+  `year` enum('Year 1','Year 2','Year 3','Year 4') NOT NULL,
+  `semester` enum('Semester I','Semester II') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `courses_reg`
+--
+
+INSERT INTO `courses_reg` (`id`, `course_code`, `course_title`, `units`, `year`, `semester`) VALUES
+(1, 'GNS 110', 'Anatomy and Physiology', 4, 'Year 1', 'Semester I'),
+(2, 'GNS 111', 'Foundation of Nursing I', 4, 'Year 1', 'Semester I'),
+(3, 'GNS 112', 'Nutrition', 2, 'Year 1', 'Semester I'),
+(4, 'GST 110', 'Use of English', 2, 'Year 1', 'Semester I'),
+(5, 'GST 111', 'Applied Physics', 2, 'Year 1', 'Semester I'),
+(6, 'GST 112', 'Applied Chemistry', 2, 'Year 1', 'Semester I'),
+(7, 'GST 113', 'Sociology', 2, 'Year 1', 'Semester I'),
+(8, 'GST 114', 'Introduction to Information Communication Technology', 2, 'Year 1', 'Semester I'),
+(9, 'GNS 120', 'Anatomy and Physiology II', 4, 'Year 1', 'Semester II'),
+(10, 'GNS 121', 'Foundation of Nursing II', 4, 'Year 1', 'Semester II'),
+(11, 'GNS 122', 'Medical Surgical Nursing I', 3, 'Year 1', 'Semester II'),
+(12, 'GNS 123', 'Primary Healthcare I', 3, 'Year 1', 'Semester II'),
+(13, 'GNS 124', 'Microbiology', 3, 'Year 1', 'Semester II'),
+(14, 'GNS 125', 'Pharmacology', 2, 'Year 1', 'Semester II'),
+(15, 'GST 120', 'Psychology', 2, 'Year 1', 'Semester II'),
+(16, 'GNS 126', 'Hospital Based Clinical Practice', 4, 'Year 1', 'Semester II');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `course_registration`
+--
+
+CREATE TABLE `course_registration` (
+  `id` int(11) NOT NULL,
+  `reg_num` varchar(20) NOT NULL,
+  `level` varchar(10) NOT NULL,
+  `course_code` varchar(10) NOT NULL,
+  `course_title` varchar(100) NOT NULL,
+  `unit` int(11) NOT NULL,
+  `semester` varchar(50) NOT NULL,
+  `sch_session` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `course_registration`
+--
+
+INSERT INTO `course_registration` (`id`, `reg_num`, `level`, `course_code`, `course_title`, `unit`, `semester`, `sch_session`) VALUES
+(1, 'CAICON/PF/24/0002', 'Year 1', 'GST 114', 'Introduction to Information Communication Technology', 2, 'Semester I', '2024/2025'),
+(4, 'CAICON/PF/24/0002', 'Year 1', 'GNS 111', 'Foundation of Nursing I', 4, 'Semester I', '2024/2025'),
+(5, 'CAICON/PF/24/0002', 'Year 1', 'GST 110', 'Use of English', 2, 'Semester I', '2024/2025'),
+(6, 'CAICON/PF/24/0002', 'Year 1', 'GST 111', 'Applied Physics', 2, 'Semester I', '2024/2025'),
+(7, 'CAICON/PF/24/0002', 'Year 1', 'GST 112', 'Applied Chemistry', 2, 'Semester I', '2024/2025');
 
 -- --------------------------------------------------------
 
@@ -267,7 +334,8 @@ CREATE TABLE `payment` (
 
 INSERT INTO `payment` (`id`, `paid_for`, `reg_num`, `course_id`, `invoice_number`, `receipt_number`, `f_amount`, `t_fee`, `t_amount`, `sch_session`, `p_status`, `date_paid`) VALUES
 (1, 'Application Form', 'CAICON/PF/24/0001', 1, 'INV-0000001', '0000001', 20000, 2000, 22000, '2025/2026', 'PAID', '2024-11-04 08:50:49'),
-(2, 'Application Form', 'CAICON/PF/24/0002', 2, 'INV-0000003', '0000002', 25000, 2000, 27000, '2025/2026', 'PAID', '2024-11-04 09:12:29');
+(2, 'Application Form', 'CAICON/PF/24/0002', 2, 'INV-0000003', '0000002', 25000, 2000, 27000, '2025/2026', 'PAID', '2024-11-04 09:12:29'),
+(6, 'School Fees', 'CAICON/PF/24/0002', 2, 'INV-0000001', '0000001', 1200000, 2000, 1202000, '2024/2025', 'PAID', '2024-11-21 09:32:02');
 
 -- --------------------------------------------------------
 
@@ -287,7 +355,7 @@ CREATE TABLE `payment_items` (
 
 INSERT INTO `payment_items` (`id`, `item_name`, `t_fee`) VALUES
 (1, 'Acceptance Fee', 2000),
-(2, 'School Fee', 2000);
+(2, 'School Fees', 2000);
 
 -- --------------------------------------------------------
 
@@ -382,6 +450,31 @@ INSERT INTO `semester` (`id`, `s_semester`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `s_invoice`
+--
+
+CREATE TABLE `s_invoice` (
+  `id` int(11) NOT NULL,
+  `paid_for` varchar(50) NOT NULL,
+  `reg_num` varchar(50) NOT NULL,
+  `invoice_number` varchar(50) NOT NULL,
+  `t_amount` int(10) NOT NULL,
+  `t_fee` int(10) NOT NULL,
+  `sch_session` varchar(20) NOT NULL,
+  `g_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `s_invoice`
+--
+
+INSERT INTO `s_invoice` (`id`, `paid_for`, `reg_num`, `invoice_number`, `t_amount`, `t_fee`, `sch_session`, `g_date`) VALUES
+(1, 'Acceptance Fee', 'CAICON/PF/24/0002', 'INV-0000001', 50000, 2000, '2024/2025', '2024-11-21 08:26:54'),
+(2, 'School Fees', 'CAICON/PF/24/0002', 'INV-0000001', 1200000, 2000, '2024/2025', '2024-11-21 08:27:04');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -399,7 +492,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `u_name`, `username`, `password`, `department`, `created_at`) VALUES
-(1, 'Seun', 'admin', '$2y$10$P.PTejEEAGaLbq7XNfo5N.oTwLzUkiZ3fb.vHHc3OG1X/fydfEiPy', 'Accounts', '2024-10-21 10:36:53');
+(1, 'Seun', 'admin', '$2y$10$P.PTejEEAGaLbq7XNfo5N.oTwLzUkiZ3fb.vHHc3OG1X/fydfEiPy', 'Accounts', '2024-10-21 10:36:53'),
+(3, 'Sly', 'sly', '$2y$10$P.PTejEEAGaLbq7XNfo5N.oTwLzUkiZ3fb.vHHc3OG1X/fydfEiPy', 'Exams and Records', '2024-11-22 09:09:49');
 
 --
 -- Indexes for dumped tables
@@ -439,6 +533,18 @@ ALTER TABLE `contact`
 -- Indexes for table `courses`
 --
 ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `courses_reg`
+--
+ALTER TABLE `courses_reg`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `course_registration`
+--
+ALTER TABLE `course_registration`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -490,6 +596,12 @@ ALTER TABLE `semester`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `s_invoice`
+--
+ALTER TABLE `s_invoice`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -522,7 +634,7 @@ ALTER TABLE `applicant_results`
 -- AUTO_INCREMENT for table `billing`
 --
 ALTER TABLE `billing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -535,6 +647,18 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `courses`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `courses_reg`
+--
+ALTER TABLE `courses_reg`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `course_registration`
+--
+ALTER TABLE `course_registration`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `current`
@@ -552,7 +676,7 @@ ALTER TABLE `health_info`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `payment_items`
@@ -585,10 +709,16 @@ ALTER TABLE `semester`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `s_invoice`
+--
+ALTER TABLE `s_invoice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

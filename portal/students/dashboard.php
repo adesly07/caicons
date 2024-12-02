@@ -71,10 +71,11 @@ $_SESSION['s_session'] = $section;
                     <div class="flex-item ml-4">
                         <img src="<?php echo $passport; ?>" alt="Passport" class="w-20 h-20 mr-4">
                     </div>
-                    <div class="flex-item ml-4">
+                    <div class="flex-item ml-4 mb-5">
                         <h2 class="text-1xl font-semibold text-gray-800">Welcome <a href="#" class="text-green-600"><?= $data['surname'] ?> <?= $data['first_name'] ?> <?= $data['middle_name'] ?></a></h2>
                         <p class="text-gray-600"><span class="text-green-600"><?php echo $username; ?></span></p>
                         <p class="text-gray-600 mb-6"><span class="text-green-600"><?php echo $course; ?></span></p>
+                        <a href="logout.php" class="block text-white text-center bg-red-500 py-2 px-4 rounded-md hover:bg-red-600">Logout</a>
                         
                     </div>
                     
@@ -99,7 +100,7 @@ $_SESSION['s_session'] = $section;
                         <h3 class="text-lg font-semibold">Payments</h3>
                         <ul>
                             <li><a href="p_rec.php">Print Receipt</a></li>
-                            <li><a href="p_records.php">Payement Records</a></li>
+                            <li><a href="p_rec.php">Payment Records</a></li>
                         </ul>
                     </div>
                 </div>
@@ -112,6 +113,11 @@ $_SESSION['s_session'] = $section;
                         </ul>
                     </div>
                     <div class="bg-white p-4 shadow-md rounded-lg">
+                        <h3 class="text-lg font-semibold">Lectures</h3>
+                        <ul>
+                            <li><a href="v_lectures.php">Online Lectures</a></li>
+                            
+                        </ul>
                         <h3 class="text-lg font-semibold">Results</h3>
                         <ul>
                             <li><a href="c_result.php">Check Result</a></li>
@@ -119,7 +125,7 @@ $_SESSION['s_session'] = $section;
                         </ul>
                     </div>
                     <div class="bg-white p-4 shadow-md rounded-lg">
-                    <h3 class="text-lg font-semibold">Biodata</h3>
+                        <h3 class="text-lg font-semibold">Biodata</h3>
                         <ul>
                             <li><a href="photocard.php">Photo Card</a></l1>
                             <li><a href="mybio.php">Biodata</a></l1>

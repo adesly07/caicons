@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])&&(!isset($_SESSION['department']))) {
 }
 $username = $_SESSION['username'];
 $department = $_SESSION['department'];
-
+$section = $_SESSION['s_session'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,12 +39,12 @@ $department = $_SESSION['department'];
 
         <!-- Main Content Area -->
         <div class=" flex-grow p-6 overflow-auto bg-white">
-            <h2 class="text-xl font-bold text-center mb-6">Wallets</h2>
+            <h2 class="text-xl font-bold text-center mb-6">Students</h2>
 
             <!-- Tabs for Staylites and Applicants -->
             <div class="flex space-x-2 mb-6">
             <button id="staylitesTab" onclick="showTab('staylites')" class="py-2 px-4 text-white bg-gray-400 hover:bg-sky-300 rounded-md">Staylites</button>
-            <button id="applicantsTab" onclick="showTab('applicants')" class="py-2 px-4 text-white bg-gray-400 hover:bg-sky-300 rounded-md">Applicants</button>
+            <button id="applicantsTab" onclick="showTab('applicants')" class="py-2 px-4 text-white bg-gray-400 hover:bg-sky-300 rounded-md"><?php echo $section; ?> Applicants</button>
         </div>
 
         <!-- Staylites Table -->
@@ -54,9 +54,9 @@ $department = $_SESSION['department'];
                 <thead class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                     <tr>
                         <th class="py-3 px-6 text-left">REGISTRATION NUMBER</th>
-                        <th class="py-3 px-6 text-left">Name</th>
+                        <th class="py-3 px-6 text-left">Names</th>
                         <th class="py-3 px-6 text-left">Phone Number</th>
-                        <th class="py-3 px-6 text-left">Wallet Balance(&#8358;)</th>
+                        <th class="py-3 px-6 text-left">Email Address</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-700 text-sm">
@@ -72,10 +72,10 @@ $department = $_SESSION['department'];
             <table class="min-w-full bg-white border" id="applicantsTable">
                 <thead class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                     <tr>
-                        <th class="py-3 px-6 text-left">Invoice number</th>
+                        <th class="py-3 px-6 text-left">Registration Number</th>
                         <th class="py-3 px-6 text-left">Names</th>
-                        <th class="py-3 px-6 text-left">Course</th>
-                        <th class="py-3 px-6 text-left">Amount(&#8358;)</th>
+                        <th class="py-3 px-6 text-left">Admission Status</th>
+                        <th class="py-3 px-6 text-left">Phone Number</th>
                         <th class="py-3 px-6 text-left">Status</th>
                         
                     </tr>

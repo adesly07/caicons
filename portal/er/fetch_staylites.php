@@ -8,10 +8,10 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $reg = $row['reg_num'];
         echo "<tr>";
-        echo "<td class='py-3 px-6'>" . "<a href='s_wallet.php?reg_num=$reg'>" . $row['reg_num'] . "</a>" . "</td>";
+        echo "<td class='py-3 px-6'>" . "<a href='v_applicant.php?reg_num=$reg'>" . $row['reg_num'] . "</a>" . "</td>";
         echo "<td class='py-3 px-6'>" . $row['surname'] . " " . $row['first_name'] . " " . $row['middle_name'] . "</td>";
         echo "<td class='py-3 px-6'>" . $row['phone_number'] . "</td>";
-        echo "<td class='py-3 px-6'>" . number_format($row['w_amt'],2) . "</td>";
+        echo "<td class='py-3 px-6'>" . $row['email'] . "</td>";
         echo "</tr>";
     }
 } else {
