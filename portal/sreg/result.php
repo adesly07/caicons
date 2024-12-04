@@ -79,7 +79,7 @@ if ($result2->num_rows > 0) {
                 <div id="firstSittingSubjects">
                     <div class="flex space-x-4 mb-4">
                         <select name="subject_first[]" class="w-1/2 border border-gray-300 rounded-md p-2" required>
-                            <option value="">Select Subject</option>
+                        <option value="">Select Subject</option>
                             <option value="Mathematics">Mathematics</option>
                             <option value="English Language">English Language</option>
                             <option value="Physics">Physics</option>

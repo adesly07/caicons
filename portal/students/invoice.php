@@ -17,7 +17,7 @@ if ($result2->num_rows > 0) {
     $t_fee = $row['t_fee'];
    // $myitem = $row['item_name'];
 }
-$sql3 = "SELECT SUM(amount) FROM billing WHERE item_names = '$item'";
+$sql3 = "SELECT SUM(amount) FROM billing WHERE item_names = '$item' AND sch_session = '$section'";
     $result2 = $conn->query($sql3);
 
 if ($result2->num_rows > 0) {
@@ -42,8 +42,8 @@ if ($result->num_rows > 0) {
     $newInvoiceNumber = 'INV-0000001';
 }
 
-    $sql = "INSERT INTO s_invoice (paid_for, reg_num, invoice_number, t_amount, t_fee, sch_session, p_status)
-            VALUES ('$item', '$username', '$newInvoiceNumber', '$i_amt', '$t_fee', '$section', 'UNPAID')";
+    $sql = "INSERT INTO s_invoice (paid_for, reg_num, invoice_number, t_amount, t_fee, sch_session)
+            VALUES ('$item', '$username', '$newInvoiceNumber', '$i_amt', '$t_fee', '$section')";
 
     if ($conn->query($sql) === TRUE) {
         $_SESSION['invoice_number'] = $newInvoiceNumber;
