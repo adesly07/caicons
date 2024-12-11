@@ -15,14 +15,14 @@ require 'vendor/autoload.php'; // Ensure Composer autoloader is included
  try {
      // Server settings
      $mail->isSMTP();
-     $mail->Host = 'caicons.edu.ng'; // Replace with your SMTP server
+     $mail->Host = ''; // Replace with your SMTP server
      $mail->SMTPAuth = true;
-     $mail->Username = 'admissionoffice@caicons.edu.ng'; // Replace with your email address
-     $mail->Password = 'caiconsoluyoro'; // Replace with your email password
+     $mail->Username = ''; // Replace with your email address
+     $mail->Password = ''; // Replace with your email password
      $mail->SMTPSecure = 'ssl';
      $mail->Port = 465;
      // Recipients
-     $mail->setFrom('admissionoffice@caicons.edu.ng', 'CAICONS Registration');
+     $mail->setFrom('', '');
      $mail->addAddress($email, $first_name);
      // Content
      $mail->isHTML(true);
