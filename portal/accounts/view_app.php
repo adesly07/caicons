@@ -45,9 +45,7 @@ $department = $_SESSION['department'];
                         <tr class="bg-gray-200 text-gray-600">
                             <th class="py-3 px-6 text-left">Course</th>
                             <th class="py-3 px-6 text-left">Form Amount</th>
-                            <th class="py-3 px-6 text-left">Tuition Fee</th>
-                            <th class="py-3 px-6 text-left">Acceptance Fee</th>
-                            <th class="py-3 px-6 text-left">Acceptance Transaction Fee</th>
+                            <th class="py-3 px-6 text-left">Transaction Fee</th>
                             <th class="py-3 px-6 text-center" colspan="2">Actions</th>
                         </tr>
                     </thead>
@@ -67,8 +65,6 @@ $department = $_SESSION['department'];
                             <td class="py-2 px-4"><?php echo $row['course']; ?></td>
                             <td class="py-2 px-4"><?php echo $row['f_amount']; ?></td>
                             <td class="py-2 px-4"><?php echo $row['t_fee']; ?></td>
-                            <td class="py-2 px-4"><?php echo $row['acceptance_fee']; ?></td>
-                            <td class="py-2 px-4"><?php echo $row['accp_tran_fee']; ?></td>
                             <td class="py-2 px-4 text-center">
                                 <a href="edit.php?id=<?php echo $row['id']; ?>" class="text-blue-500 hover:underline">
                                     <img src="../../assets/images/edit.png" alt="Logo" width="20" height="20">

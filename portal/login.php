@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 case 'Academics':
                     header('Location: academics/aca_db.php');
                     break;
-                case 'admin':
+                case 'ICT':
                     header('Location: admin/admin_db.php');
                     break;
                 default:

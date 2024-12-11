@@ -30,7 +30,7 @@ include("../conx.php");
                     <input type="text" id="serial_number" name="serial_number" class="pl-10 p-3 border border-gray-300 rounded-md w-full focus:ring focus:ring-blue-200" required>
                 </div>
                 <button type="submit" class="bg-sky-400 text-white px-4 py-2 rounded hover:bg-sky-300">
-                    Verify
+                    OK
                 </button>
             </form>
         </div>

@@ -20,12 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $course = $_POST['course'];
     $f_amount = $_POST['f_amount'];
     $t_fee = $_POST['t_fee'];
-    $acceptance_fee = $_POST['acceptance_fee'];
-    $accp_tran_fee = $_POST['accp_tran_fee'];
-
-    $updateQuery = "UPDATE courses SET course = ?, f_amount = ?, t_fee = ?, acceptance_fee = ?, accp_tran_fee = ? WHERE id = ?";
+    
+    $updateQuery = "UPDATE courses SET course = ?, f_amount = ?, t_fee = ? WHERE id = ?";
     $stmt = $conn->prepare($updateQuery);
-    $stmt->bind_param("siiiii", $course, $f_amount, $t_fee, $acceptance_fee, $accp_tran_fee, $id);
+    $stmt->bind_param("siii", $course, $f_amount, $t_fee, $id);
     $stmt->execute();
     
     header("Location: view_app.php");
@@ -57,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
         <!-- Main Content Area -->
         <div class="container mx-auto max-w-lg bg-white rounded-lg shadow-lg p-6">
-            <h2 class="text-2xl font-bold text-center mb-6">Edit Application Fee<?php echo $id; ?></h2>
+            <h2 class="text-2xl font-bold text-center mb-6">Edit Application Fee</h2>
             <form method="POST" action="edit.php?id=<?php echo $id; ?>">
                 <div class="mb-4">
                     <label for="course" class="block text-gray-700 font-semibold">Course</label>
@@ -70,14 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="mb-4">
                     <label for="t_fee" class="block text-gray-700 font-semibold">Form Transaction Fee</label>
                     <input type="number" id="t_fee" name="t_fee" value="<?php echo $record['t_fee']; ?>" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required>
-                </div>
-                <div class="mb-4">
-                    <label for="acceptance_fee" class="block text-gray-700 font-semibold">Acceptance Fee</label>
-                    <input type="number" id="acceptance_fee" name="acceptance_fee" value="<?php echo $record['acceptance_fee']; ?>" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required>
-                </div>
-                <div class="mb-4">
-                    <label for="accp_tran_fee" class="block text-gray-700 font-semibold">Acceptance Transaction Fee</label>
-                    <input type="number" id="accp_tran_fee" name="accp_tran_fee" value="<?php echo $record['accp_tran_fee']; ?>" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required>
                 </div>
                 <button type="submit" class="w-full bg-sky-400 text-white font-semibold py-2 rounded-md hover:bg-sky-300 transition duration-200">Update Fee</button>
             </form>

@@ -7,7 +7,7 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 $username = $_SESSION['username'];
-$section = $_SESSION['s_session'];
+//$section = $_SESSION['s_session'];
 $sql = "SELECT * FROM applicants WHERE reg_num = '$username'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -53,6 +53,34 @@ if ($result->num_rows > 0) {
                                 
                             ?>
                                 <option value="<?php echo $data['item_name']; ?>"><?php echo $data['item_name']; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                </div>
+                <div class="mb-4">
+                    <label for="level" class="block text-gray-700 font-semibold mb-2">Level</label>
+                        <select id="level" name ="level" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400">
+                            <?php
+                                $sql4 = "SELECT * FROM level order by id ASC";
+                                $result = $conn->query($sql4);
+                                while($data= mysqli_fetch_array($result)){
+                            ?>
+                                <option value="<?php echo $data['level_name']; ?>"><?php echo $data['level_name']; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                </div>
+                <div class="mb-4">
+                <label for="section" class="block text-gray-700 font-semibold mb-2">School Session</label>
+                        <select id="section" name ="section" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400">
+                        <?php
+                                $sql4 = "SELECT * FROM sch_session order by id ASC";
+                                $result = $conn->query($sql4);
+                                while($data= mysqli_fetch_array($result)){
+                            ?>
+                                <option value="<?php echo $data['s_session']; ?>"><?php echo $data['s_session']; ?></option>
                             <?php 
                                 }
                             ?>

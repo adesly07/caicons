@@ -14,6 +14,7 @@ $department = $_SESSION['department'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $payment_name = $_POST['payment_name'];
     $t_fee = $_POST['t_fee'];
+    //$section = $_POST['section'];
     if (!empty($payment_name)) {
         $stmt = $conn->prepare("INSERT INTO payment_items (item_name, t_fee) VALUES (?, ?)");
         $stmt->bind_param("si", $payment_name, $t_fee);
@@ -76,6 +77,7 @@ $options_result = $conn->query($options_query);
                     <input type="text" name="payment_name" placeholder="Enter Item Name" class="p-3 border rounded-md focus:ring-2 focus:ring-sky-400" required>
                     <br/>
                     <input type="text" name="t_fee" placeholder="Enter Transaction Fee" class="p-3 border rounded-md focus:ring-2 focus:ring-sky-400" required>
+                    
                     <br/>
                     <button type="submit" class="bg-sky-400 text-white py-2 px-4 rounded-md hover:bg-sky-300">Add Item</button>
                 </form>

@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])&&(!isset($_SESSION['department']))) {
 }
 $username = $_SESSION['username'];
 $department = $_SESSION['department'];
-
+$section = $_SESSION['s_session'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,7 @@ $department = $_SESSION['department'];
             <!-- Tabs for Staylites and Applicants -->
             <div class="flex space-x-2 mb-6">
             <button id="staylitesTab" onclick="showTab('staylites')" class="py-2 px-4 text-white bg-gray-400 hover:bg-sky-300 rounded-md">Staylites</button>
-            <button id="applicantsTab" onclick="showTab('applicants')" class="py-2 px-4 text-white bg-gray-400 hover:bg-sky-300 rounded-md">Applicants</button>
+            <button id="applicantsTab" onclick="showTab('applicants')" class="py-2 px-4 text-white bg-gray-400 hover:bg-sky-300 rounded-md"><?php echo $section; ?> Applicants</button>
         </div>
 
         <!-- Staylites Table -->

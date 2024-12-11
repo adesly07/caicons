@@ -11,6 +11,8 @@ if ($result->num_rows > 0) {
     $data = $result->fetch_assoc();
     $section = $data['sch_session'];
     $_SESSION['sch_session'] = $section;
+    $_SESSION['pin'] = $pin;
+    $_SESSION['serial_number'] = $serial_number;
     header('location:new_reg.php');
 } else {
     echo "<script>alert('Invalid or already used pin/serial number.'); window.location.href='index.php';</script>";

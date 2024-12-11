@@ -9,6 +9,7 @@ $username = $_SESSION['username'];
 $section = $_SESSION['s_session'];
 $newInvoiceNumber = $_SESSION["invoice_number"];
 $item = $_SESSION["payment_items"];
+$level = $_SESSION["level"];
 $sql = "SELECT * FROM s_invoice WHERE invoice_number = '$newInvoiceNumber' and paid_for = '$item'";
 $result = $conn->query($sql);
 
@@ -100,6 +101,7 @@ $conn->close();
             <p><strong>Email:</strong> <?= $rows['email'] ?></p>
             <p><strong>Phone:</strong> <?= $rows['phone_number'] ?></p>
             <p><strong>Course:</strong> <?php echo $course; ?></p>
+            <p><strong>Level:</strong> <?php echo $level; ?></p>
             <p><strong>Wallet Balance(&#8358;):</strong> <?= number_format($rows['w_amt'],2) ?></p>
         </div>
         

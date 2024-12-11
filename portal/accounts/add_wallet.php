@@ -8,6 +8,8 @@ if (!isset($_SESSION['username'])&&(!isset($_SESSION['department']))) {
 }
 $username = $_SESSION['username'];
 $department = $_SESSION['department'];
+$myname = $_SESSION['first_name'];
+$email = $_SESSION['email'];
 $inv = $_SESSION['invoice_number'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $walletAmount = $_POST['walletAmount'];
@@ -38,10 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare($updateQuery);
     $stmt->bind_param("dsssss", $walletAmount, $registrationNumber, $pwd_hash, $pwd, $p_status, $inv);
     if ($stmt->execute()) {
-        echo "<script>
+        $_SESSION['reg_num'] = $registrationNumber;
+        $_SESSION['pwd'] = $pwd;
+        header('location:s_email.php');
+       /* echo "<script>
                 alert('Wallet updated successfully. Your registration number is: $registrationNumber');
                 window.location.href = 'wallet.php';
-              </script>";
+              </script>";*/
     } else {
         echo "<script>alert('An error occurred while updating the wallet.'); window.history.back();</script>";
     }

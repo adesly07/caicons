@@ -17,6 +17,10 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $data = $result->fetch_assoc();
     $course_id = $data['course_id'];
+    $myname = $data['first_name'];
+    $email = $data['email'];
+    $_SESSION['first_name'] = $myname;
+    $_SESSION['email'] = $email;
 } 
 $sql2 = "SELECT * FROM courses where id = '$course_id'";
 $result2 = $conn->query($sql2);

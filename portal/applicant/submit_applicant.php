@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $course_id = mysqli_real_escape_string($conn, $_POST['course_id']);
     $section = mysqli_real_escape_string($conn, $_POST['section']);
     // Retrieve the last invoice number
-$sql = "SELECT invoice_number FROM applicants ORDER BY id DESC LIMIT 1";
+$sql = "SELECT invoice_number FROM applicants ORDER BY applicant_id DESC LIMIT 1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

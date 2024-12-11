@@ -3,7 +3,8 @@ session_start();
 include("../conx.php");
 
 $section = $_SESSION['sch_session'];
-
+$pin = $_SESSION['pin'];
+$serial_number = $_SESSION['serial_number'];
 
 		
 ?>

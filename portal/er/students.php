@@ -90,5 +90,6 @@ $section = $_SESSION['s_session'];
     
 
     <script src="js/script2.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

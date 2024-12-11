@@ -50,11 +50,11 @@ if (!isset($_SESSION['user_id'])) {
             <h1 class="text-2xl font-bold mb-6 text-center">Create Account | <a href = "v_user.php">View Accounts</a></h1>
             <!-- Add  Form -->
             <form action="user.php" method="POST" onsubmit="return validatePassword()">
-            <div class="mb-4">
+                <div class="mb-4">
                     <label for="name" class="block text-gray-700">Name</label>
                     <input type="text" id="name" name="name" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>    
-            <div class="mb-4">
+                <div class="mb-4">
                     <label for="username" class="block text-gray-700">Username</label>
                     <input type="text" id="username" name="username" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>

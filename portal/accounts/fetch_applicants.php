@@ -1,7 +1,7 @@
 <?php
 include('../conx.php');
-
-$query = "SELECT * FROM applicants";
+$section = $_SESSION['s_session'];
+$query = "SELECT * FROM applicants WHERE sch_session = '$section'";
 $result = $conn->query($query);
 
 if ($result->num_rows > 0) {

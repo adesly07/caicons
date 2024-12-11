@@ -48,7 +48,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
                 <p class="text-x1 font-bold mb-4 text-red-700"><?php echo $myDate; ?></p>
                 <h2 class="text-x1 font-bold mb-2 text-green-700">Curent IP Address:</h2>
                 <p class="text-x1 font-bold mb-4 text-red-700"><?php echo $ip; ?></p>
-            </div>
+            
             </main>
         </div>
     </div>

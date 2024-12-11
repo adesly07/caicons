@@ -1,7 +1,7 @@
 <?php
 include('../conx.php');
-
-$query = "SELECT * FROM applicants where p_status = 'CONFIRMED'";
+$section = $_SESSION['s_session'];
+$query = "SELECT * FROM applicants where p_status = 'CONFIRMED' AND sch_session = '$section'";
 $result = $conn->query($query);
 
 if ($result->num_rows > 0) {

@@ -53,14 +53,7 @@ $department = $_SESSION['department'];
                     <label for="t_fee" class="block text-gray-700 font-semibold">Form Transaction Fee</label>
                     <input type="number" id="t_fee" name="t_fee" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required>
                 </div>
-                <div class="mb-4">
-                    <label for="acceptance_fee" class="block text-gray-700 font-semibold">Acceptance Fee</label>
-                    <input type="number" id="acceptance_fee" name="acceptance_fee" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required>
-                </div>
-                <div class="mb-4">
-                    <label for="accp_tran_fee" class="block text-gray-700 font-semibold">Acceptance Transaction Fee</label>
-                    <input type="number" id="accp_tran_fee" name="accp_tran_fee" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required>
-                </div>
+                
                 <button type="submit" class="w-full bg-sky-400 text-white font-semibold py-2 rounded-md hover:bg-sky-300 transition duration-200">Save Amount</button>
             </form>
         </div>

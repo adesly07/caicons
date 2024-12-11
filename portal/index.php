@@ -32,7 +32,7 @@ include("conx.php");
                         <option value="Accounts">Accounts</option>
                         <option value="Academics">Academics</option>
                         <option value="Exams and Records">Exams and Records</option>
-                        <option value="admin">Administration</option>
+                        <option value="ICT">ICT</option>
                     </select>
                 </div>
                 <button id="loginButton" type="submit" class="w-full bg-sky-400 text-white font-bold py-2 px-4 rounded hover:bg-sky-300 flex justify-center items-center">

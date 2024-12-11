@@ -6,9 +6,11 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 $username = $_SESSION['username'];
-$section = $_SESSION['s_session'];
+//$section = $_SESSION['s_session'];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $item = $_POST['payment_items'];
+    $level = $_POST['level'];
+    $section = $_POST['section'];
     $sql2 = "SELECT * FROM payment_items WHERE item_name = '$item'";
     $result2 = $conn->query($sql2);
 
@@ -17,7 +19,7 @@ if ($result2->num_rows > 0) {
     $t_fee = $row['t_fee'];
    // $myitem = $row['item_name'];
 }
-$sql3 = "SELECT SUM(amount) FROM billing WHERE item_names = '$item' AND sch_session = '$section'";
+$sql3 = "SELECT SUM(amount) FROM billing WHERE item_names = '$item' AND sch_session = '$section' AND level = '$level'";
     $result2 = $conn->query($sql3);
 
 if ($result2->num_rows > 0) {
@@ -48,6 +50,7 @@ if ($result->num_rows > 0) {
     if ($conn->query($sql) === TRUE) {
         $_SESSION['invoice_number'] = $newInvoiceNumber;
         $_SESSION['payment_items'] = $item;
+        $_SESSION['level'] = $level;
         header('location:p_invoice.php');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

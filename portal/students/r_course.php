@@ -50,12 +50,17 @@ if ($result2->num_rows > 0) {
             <form method="POST" action="r_course.php">
                 
                 <div class="mb-4">
-                    <label for="level" class="block text-gray-700 font-semibold mb-2">Level</label>
+                <label for="level" class="block text-gray-700 font-semibold mb-2">Level</label>
                         <select id="level" name ="level" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400">
-                            <option value="Year 1">Year 1</option>
-                            <option value="Year 2">Year 2</option>
-                            <option value="Year 3">Year 3</option>
-                            <option value="Year 4">Year 4</option>
+                        <?php
+                                $sql4 = "SELECT * FROM level order by id ASC";
+                                $result = $conn->query($sql4);
+                                while($data= mysqli_fetch_array($result)){
+                            ?>
+                                <option value="<?php echo $data['level_name']; ?>"><?php echo $data['level_name']; ?></option>
+                            <?php 
+                                }
+                            ?>
                         </select>
                 </div>
                 <button type="submit" class="w-full bg-sky-400 text-white font-bold py-2 px-4 rounded hover:bg-sky-300 flex justify-center items-center">

@@ -12,16 +12,18 @@ $department = $_SESSION['department'];
 $sql3 = "SELECT * FROM current where s_category = 'Staylite'";
 $result3 = $conn->query($sql3);
 $row3 = $result3->fetch_assoc();
-$section = $row3['s_session'];
-$_SESSION['s_session'] = $section;
+//$section = $row3['s_session'];
+//$_SESSION['s_session'] = $section;
 // Handle form submission to add payment options
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $item_name = $_POST['item_name'];
     $cat = $_POST['category'];
     $amt = $_POST['amt'];
+    $level = $_POST['level'];
+    $section = $_POST['section'];
     if (!empty($cat)) {
-        $stmt = $conn->prepare("INSERT INTO billing (item_names, category, sch_session, amount) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("sssi", $item_name, $cat, $section, $amt);
+        $stmt = $conn->prepare("INSERT INTO billing (item_names, category, sch_session, level, amount) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssi", $item_name, $cat, $section, $level, $amt);
         if ($stmt->execute()) {
             $success_message = "Item added successfully!";
         } else {
@@ -34,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Fetch payment options
-$options_query = "SELECT * FROM billing WHERE sch_session = '$section' ORDER BY id DESC";
+$options_query = "SELECT * FROM billing ORDER BY id DESC LIMIT 30";
 $options_result = $conn->query($options_query);
 ?>
 <!DOCTYPE html>
@@ -61,7 +63,7 @@ $options_result = $conn->query($options_query);
             include('navbar.php');
         ?>
         <div class="container mx-auto p-6">
-            <h1 class="text-xl font-bold text-center mb-6"><?php echo $section; ?> Session School Fee Bills</h1>
+            <h1 class="text-xl font-bold text-center mb-6">Session School Fee Bills</h1>
 
             <!-- Add Payment Option Form -->
             <div class="bg-white shadow-md rounded-lg p-6 mb-6">
@@ -95,13 +97,39 @@ $options_result = $conn->query($options_query);
                     <br/>
                     <input type="text" name="amt" placeholder="Enter Amount" class="p-3 border rounded-md focus:ring-2 focus:ring-sky-400" required>
                     <br/>
+                    <label for="level" class="block text-gray-700 font-semibold mb-2">Level</label>
+                        <select id="level" name ="level" class="w-40 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400">
+                        <?php
+                                $sql4 = "SELECT * FROM level order by id ASC";
+                                $result = $conn->query($sql4);
+                                while($data= mysqli_fetch_array($result)){
+                            ?>
+                                <option value="<?php echo $data['level_name']; ?>"><?php echo $data['level_name']; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                    <br/>
+                    <label for="section" class="block text-gray-700 font-semibold mb-2">School Session</label>
+                        <select id="section" name ="section" class="w-40 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400">
+                        <?php
+                                $sql4 = "SELECT * FROM sch_session order by id ASC";
+                                $result = $conn->query($sql4);
+                                while($data= mysqli_fetch_array($result)){
+                            ?>
+                                <option value="<?php echo $data['s_session']; ?>"><?php echo $data['s_session']; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                        <br/>
                     <button type="submit" class="bg-sky-400 text-white py-2 px-4 rounded-md hover:bg-sky-300">Add</button>
                 </form>
             </div>
 
             <!-- Display Payment Options -->
             <div class="bg-white shadow-md rounded-lg p-6">
-                <h2 class="text-xl font-semibold mb-4">Items Added for <?php echo $section; ?> Session</h2>
+                <h2 class="text-xl font-semibold mb-4">Items Added</h2>
                 <?php if ($options_result->num_rows > 0): ?>
                     <table class="w-full border-collapse border border-gray-200">
                         <thead>
@@ -110,6 +138,8 @@ $options_result = $conn->query($options_query);
                                
                                 <th class="border border-gray-200 p-3 text-left">Category</th>
                                 <th class="border border-gray-200 p-3 text-left">Amount(&#8358;)</th>
+                                <th class="border border-gray-200 p-3 text-left">Level</th>
+                                <th class="border border-gray-200 p-3 text-left">School Session</th>
                                 <th class="border border-gray-200 p-3 text-left">Action</th>
                             </tr>
                         </thead>
@@ -120,6 +150,8 @@ $options_result = $conn->query($options_query);
                                     
                                     <td class="border border-gray-200 p-3"><?php echo $row['category']; ?></td>
                                     <td class="border border-gray-200 p-3"><?php echo number_format($row['amount'],2); ?></td>
+                                    <td class="border border-gray-200 p-3"><?php echo $row['level']; ?></td>
+                                    <td class="border border-gray-200 p-3"><?php echo $row['sch_session']; ?></td>
                                     <td class="border border-gray-200 p-3">
                                         <a href="delete_bill.php?id=<?php echo $row['id']; ?>" class="text-red-500 hover:underline" onclick="return confirm('Are you sure you want to delete this record?')">
                                             <img src="../../assets/images/delete.png" alt="Logo" width="20" height="20">

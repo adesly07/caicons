@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2024 at 10:19 AM
+-- Generation Time: Dec 06, 2024 at 10:37 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -64,7 +64,8 @@ INSERT INTO `applicants` (`applicant_id`, `a_status`, `reg_num`, `pwd`, `p_decr`
 (2, 'PENDING', '', '', '', '', 'Adedigba', 'Sylvester', 'Seun', 'adesly07@gmail.com', '08064405936', 'Nigerian', '2025/2026', 'INV-0000002', 1, 'NOT CONFIRMED', '2024-11-13 09:32:31', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
 (3, 'ADMITTED', 'CAICON/PF/24/0002', '$2y$10$l9tXPtNoysdMLsLU0I7A3eGVY7ASFUY9CjGH.vhEmdXE0QXADRiP2', '23C8B3D2', '114900', 'Adedigba', 'Mary', 'Yewande', 'mary@gmail.com', '08059605896', 'Nigerian', '2025/2026', 'INV-0000003', 2, 'CONFIRMED', '2024-12-04 09:19:03', '1999-07-25', 'female', 'single', 'Oro', 'Egbeda', 'Kwara', '', 'Egbeda'),
 (4, 'PENDING', 'CAICON/PF/24/0003', '$2y$10$k.rsOQ9CeWGgSGVrJzj7POXKbqY/RTmmmIdvzVWuLCorZ/RO/DkS.', '35E3E984', '22000', 'Adedigba', 'Anthony', 'Folahan', 'thonyclaret@gmail.com', '08137428365', 'Nigerian', '2025/2026', 'INV-0000004', 1, 'CONFIRMED', '2024-11-27 14:38:11', '1990-07-25', 'female', 'single', 'Lagos', 'Egbeda', 'Oyo', '', 'Egbeda'),
-(6, 'ADMITTED', 'CAICON/PF/23/0001', '$2y$10$sT3VbiuRtfMPcZSxSuII7.4NpboRNFpigwcnbt8K43gUjWje1ZQY.', '9E169D1D', '0', 'Sly', 'Seun', 'Yemi', 'seunsly@gmail.com', '08064405936', 'Nigerian', '2023/2024', '-', 1, 'CONFIRMED', '2024-12-04 08:09:18', '2000-08-09', 'male', 'single', 'Lagos', 'Lagos', 'Oyo', 'Ibadan South West', 'Ibadan');
+(6, 'ADMITTED', 'CAICON/PF/23/0001', '$2y$10$sT3VbiuRtfMPcZSxSuII7.4NpboRNFpigwcnbt8K43gUjWje1ZQY.', '9E169D1D', '0', 'Sly', 'Seun', 'Yemi', 'seunsly@gmail.com', '08064405936', 'Nigerian', '2023/2024', '-', 1, 'CONFIRMED', '2024-12-04 08:09:18', '2000-08-09', 'male', 'single', 'Lagos', 'Lagos', 'Oyo', 'Ibadan South West', 'Ibadan'),
+(7, 'ADMITTED', 'CAICON/PF/23/0002', '$2y$10$68ApIhyRaCeU1yCMA6dZD.f7eIFaAUO7ckLqW0h9LgKepKc4DsrEC', 'A92EC022', '0', 'Ayoola', 'Adebayo', 'Olufem', 'ayo@gmail.com', '08064405936', 'Nigerian', '2024/2025', '-', 1, 'CONFIRMED', '2024-12-05 09:23:41', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -126,6 +127,7 @@ CREATE TABLE `billing` (
   `item_names` varchar(50) NOT NULL,
   `category` varchar(100) NOT NULL,
   `sch_session` varchar(20) NOT NULL,
+  `level` varchar(10) NOT NULL,
   `amount` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -133,30 +135,53 @@ CREATE TABLE `billing` (
 -- Dumping data for table `billing`
 --
 
-INSERT INTO `billing` (`id`, `item_names`, `category`, `sch_session`, `amount`) VALUES
-(1, 'School Fees', 'Tuition', '2024/2025', 500000),
-(2, 'School Fees', 'Library', '2024/2025', 15000),
-(3, 'School Fees', 'Accommodation', '2024/2025', 200000),
-(4, 'School Fees', 'Computer Training', '2024/2025', 20000),
-(5, 'School Fees', 'Examination fees and materials', '2024/2025', 80000),
-(6, 'School Fees', 'Caping Ceremony', '2024/2025', 5000),
-(7, 'School Fees', 'Accreditation fee', '2024/2025', 15000),
-(8, 'School Fees', 'Uniform (2 sets) & 2 sets of Scrub', '2024/2025', 80000),
-(9, 'School Fees', 'Procedure Manual / School Curriculum', '2024/2025', 40000),
-(10, 'School Fees', 'Florence Nightingale', '2024/2025', 10000),
-(11, 'School Fees', 'Bench fee', '2024/2025', 20000),
-(12, 'School Fees', 'Stationeries', '2024/2025', 10000),
-(13, 'School Fees', 'Sports', '2024/2025', 5000),
-(14, 'School Fees', 'ID card / Name tag', '2024/2025', 5000),
-(15, 'School Fees', 'Verification of one result', '2024/2025', 5000),
-(16, 'School Fees', 'Caution fees', '2024/2025', 10000),
-(17, 'School Fees', 'Record book of instruction', '2024/2025', 5000),
-(18, 'School Fees', 'Utilities', '2024/2025', 20000),
-(19, 'School Fees', 'NHIS', '2024/2025', 15000),
-(20, 'School Fees', 'Medical test', '2024/2025', 40000),
-(22, 'Acceptance Fee', 'Acceptance Fee', '2024/2025', 50000),
-(23, 'School Fees', 'Development', '2024/2025', 100000),
-(24, 'Online Rectification', 'Online Rectification', '2024/2025', 1000);
+INSERT INTO `billing` (`id`, `item_names`, `category`, `sch_session`, `level`, `amount`) VALUES
+(1, 'School Fees', 'Tuition', '2024/2025', 'Year 1', 500000),
+(2, 'School Fees', 'Library', '2024/2025', 'Year 1', 15000),
+(3, 'School Fees', 'Accommodation', '2024/2025', 'Year 1', 200000),
+(4, 'School Fees', 'Computer Training', '2024/2025', 'Year 1', 20000),
+(5, 'School Fees', 'Examination fees and materials', '2024/2025', 'Year 1', 80000),
+(6, 'School Fees', 'Caping Ceremony', '2024/2025', 'Year 1', 5000),
+(7, 'School Fees', 'Accreditation fee', '2024/2025', 'Year 1', 15000),
+(8, 'School Fees', 'Uniform (2 sets) & 2 sets of Scrub', '2024/2025', 'Year 1', 80000),
+(9, 'School Fees', 'Procedure Manual / School Curriculum', '2024/2025', 'Year 1', 40000),
+(10, 'School Fees', 'Florence Nightingale', '2024/2025', 'Year 1', 10000),
+(11, 'School Fees', 'Bench fee', '2024/2025', 'Year 1', 20000),
+(12, 'School Fees', 'Stationeries', '2024/2025', 'Year 1', 10000),
+(13, 'School Fees', 'Sports', '2024/2025', 'Year 1', 5000),
+(14, 'School Fees', 'ID card / Name tag', '2024/2025', 'Year 1', 5000),
+(15, 'School Fees', 'Verification of one result', '2024/2025', 'Year 1', 5000),
+(16, 'School Fees', 'Caution fees', '2024/2025', 'Year 1', 10000),
+(17, 'School Fees', 'Record book of instruction', '2024/2025', 'Year 1', 5000),
+(18, 'School Fees', 'Utilities', '2024/2025', 'Year 1', 20000),
+(19, 'School Fees', 'NHIS', '2024/2025', 'Year 1', 15000),
+(20, 'School Fees', 'Medical test', '2024/2025', 'Year 1', 40000),
+(22, 'Acceptance Fee', 'Acceptance Fee', '2024/2025', 'Year 1', 50000),
+(23, 'School Fees', 'Development', '2024/2025', 'Year 1', 100000),
+(24, 'Online Rectification', 'Online Rectification', '2024/2025', 'Year 1', 1000),
+(26, 'Acceptance Fee', 'Acceptance Fee', '2023/2024', 'Year 1', 20000),
+(27, 'School Fees', 'Tuition', '2023/2024', 'Year 1', 300000),
+(28, 'School Fees', 'Library', '2023/2024', 'Year 1', 20000),
+(29, 'School Fees', 'Accommodation', '2023/2024', 'Year 1', 100000),
+(30, 'School Fees', 'Development', '2023/2024', 'Year 1', 25000),
+(31, 'School Fees', 'Computer Training', '2023/2024', 'Year 1', 20000),
+(32, 'School Fees', 'Examination fees and materials', '2023/2024', 'Year 1', 80000),
+(33, 'School Fees', 'Caping Ceremony', '2023/2024', 'Year 1', 5000),
+(34, 'School Fees', 'Accreditation fee', '2023/2024', 'Year 1', 15000),
+(35, 'School Fees', 'Uniform (2 sets)', '2023/2024', 'Year 1', 40000),
+(36, 'School Fees', 'Indexing', '2023/2024', 'Year 1', 10000),
+(37, 'School Fees', 'Procedure Manual / School Curriculum', '2023/2024', 'Year 1', 40000),
+(38, 'School Fees', 'Florence Nightingale', '2023/2024', 'Year 1', 10000),
+(39, 'School Fees', 'Bench fee', '2023/2024', 'Year 1', 20000),
+(40, 'School Fees', 'Stationeries', '2023/2024', 'Year 1', 10000),
+(41, 'School Fees', 'Sports', '2023/2024', 'Year 1', 5000),
+(42, 'School Fees', 'ID card / Name tag', '2023/2024', 'Year 1', 5000),
+(43, 'School Fees', 'Verification of one result', '2023/2024', 'Year 1', 5000),
+(44, 'School Fees', 'Caution fees', '2023/2024', 'Year 1', 10000),
+(45, 'School Fees', 'Record book of instruction', '2023/2024', 'Year 1', 5000),
+(46, 'School Fees', 'Utilities', '2023/2024', 'Year 1', 20000),
+(47, 'School Fees', 'NHIS', '2023/2024', 'Year 1', 15000),
+(48, 'School Fees', 'Medical test', '2023/2024', 'Year 1', 40000);
 
 -- --------------------------------------------------------
 
@@ -286,7 +311,7 @@ CREATE TABLE `current` (
 --
 
 INSERT INTO `current` (`id`, `s_category`, `s_semester`, `s_session`) VALUES
-(1, 'Staylite', 'First', '2024/2025'),
+(1, 'Staylite', 'First', '2023/2024'),
 (2, 'Applicant', 'First', '2025/2026');
 
 -- --------------------------------------------------------
@@ -311,6 +336,27 @@ INSERT INTO `health_info` (`id`, `reg_num`, `hasCondition`, `conditionDetails`, 
 (1, 'CAICON/PF/24/0002', 'Yes', 'Typhoid', 'None for now'),
 (2, 'CAICON/PF/24/0001', 'No', '', 'none'),
 (3, 'CAICON/PF/23/0001', 'No', '', 'Non');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `level`
+--
+
+CREATE TABLE `level` (
+  `id` int(4) NOT NULL,
+  `level_name` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `level`
+--
+
+INSERT INTO `level` (`id`, `level_name`) VALUES
+(1, 'Year 1'),
+(2, 'Year 2'),
+(3, 'Year 3'),
+(4, 'Year 4');
 
 -- --------------------------------------------------------
 
@@ -352,17 +398,18 @@ INSERT INTO `payment` (`id`, `paid_for`, `reg_num`, `course_id`, `invoice_number
 CREATE TABLE `payment_items` (
   `id` int(11) NOT NULL,
   `item_name` varchar(255) NOT NULL,
-  `t_fee` int(10) NOT NULL
+  `t_fee` int(10) NOT NULL,
+  `s_session` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `payment_items`
 --
 
-INSERT INTO `payment_items` (`id`, `item_name`, `t_fee`) VALUES
-(1, 'Acceptance Fee', 2000),
-(2, 'School Fees', 2000),
-(4, 'Online Rectification', 100);
+INSERT INTO `payment_items` (`id`, `item_name`, `t_fee`, `s_session`) VALUES
+(1, 'Application Form', 0, ''),
+(2, 'Acceptance Fee', 0, ''),
+(3, 'School Fees', 0, '');
 
 -- --------------------------------------------------------
 
@@ -665,8 +712,8 @@ CREATE TABLE `sch_session` (
 --
 
 INSERT INTO `sch_session` (`id`, `s_session`) VALUES
-(1, '2024/2025'),
-(2, '2025/2026');
+(1, '2023/2024'),
+(2, '2024/2025');
 
 -- --------------------------------------------------------
 
@@ -711,7 +758,12 @@ CREATE TABLE `s_invoice` (
 INSERT INTO `s_invoice` (`id`, `paid_for`, `reg_num`, `invoice_number`, `t_amount`, `t_fee`, `sch_session`, `g_date`) VALUES
 (1, 'Acceptance Fee', 'CAICON/PF/24/0002', 'INV-0000001', 50000, 2000, '2024/2025', '2024-11-21 08:26:54'),
 (2, 'School Fees', 'CAICON/PF/24/0002', 'INV-0000001', 1200000, 2000, '2024/2025', '2024-11-21 08:27:04'),
-(7, 'Online Rectification', 'CAICON/PF/24/0002', 'INV-0000001', 1000, 100, '2024/2025', '2024-12-04 09:18:53');
+(7, 'Online Rectification', 'CAICON/PF/24/0002', 'INV-0000001', 1000, 100, '2024/2025', '2024-12-04 09:18:53'),
+(8, 'Acceptance Fee', 'CAICON/PF/24/0002', 'INV-0000002', 50000, 2000, '2024/2025', '2024-12-04 10:17:53'),
+(9, 'Acceptance Fee', 'CAICON/PF/24/0002', 'INV-0000003', 50000, 2000, '2024/2025', '2024-12-04 10:19:39'),
+(10, 'School Fee', 'CAICON/PF/24/0002', 'INV-0000001', 0, 0, '2024/2025', '2024-12-06 09:15:05'),
+(11, 'School Fee', 'CAICON/PF/24/0002', 'INV-0000002', 0, 0, '2023/2024', '2024-12-06 09:15:24'),
+(12, 'School Fees', 'CAICON/PF/24/0002', 'INV-0000002', 1200000, 0, '2024/2025', '2024-12-06 09:17:17');
 
 -- --------------------------------------------------------
 
@@ -734,7 +786,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `u_name`, `username`, `password`, `department`, `created_at`) VALUES
 (1, 'Seun', 'admin', '$2y$10$P.PTejEEAGaLbq7XNfo5N.oTwLzUkiZ3fb.vHHc3OG1X/fydfEiPy', 'Accounts', '2024-10-21 10:36:53'),
-(3, 'Sly', 'sly', '$2y$10$P.PTejEEAGaLbq7XNfo5N.oTwLzUkiZ3fb.vHHc3OG1X/fydfEiPy', 'Exams and Records', '2024-11-22 09:09:49');
+(3, 'Sly', 'sly', '$2y$10$P.PTejEEAGaLbq7XNfo5N.oTwLzUkiZ3fb.vHHc3OG1X/fydfEiPy', 'Exams and Records', '2024-11-22 09:09:49'),
+(4, 'Sylvester', 'seun', '$2y$10$P.PTejEEAGaLbq7XNfo5N.oTwLzUkiZ3fb.vHHc3OG1X/fydfEiPy', 'ICT', '2024-12-05 09:38:42');
 
 --
 -- Indexes for dumped tables
@@ -801,6 +854,12 @@ ALTER TABLE `health_info`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `level`
+--
+ALTER TABLE `level`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
@@ -863,7 +922,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `applicants`
 --
 ALTER TABLE `applicants`
-  MODIFY `applicant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `applicant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `applicant_documents`
@@ -881,7 +940,7 @@ ALTER TABLE `applicant_results`
 -- AUTO_INCREMENT for table `billing`
 --
 ALTER TABLE `billing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -920,6 +979,12 @@ ALTER TABLE `health_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `level`
+--
+ALTER TABLE `level`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
@@ -929,7 +994,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `payment_items`
 --
 ALTER TABLE `payment_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pins`
@@ -965,13 +1030,13 @@ ALTER TABLE `semester`
 -- AUTO_INCREMENT for table `s_invoice`
 --
 ALTER TABLE `s_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
