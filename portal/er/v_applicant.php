@@ -55,8 +55,9 @@ if ($result->num_rows > 0) {
             
 
             <div class="bg-white p-4 shadow-md rounded-lg">
-            <h3 class="text-lg font-semibold"><?= $data['surname']; ?> <?= $data['first_name']; ?> <?= $data['middle_name']; ?> Biodata</h3>
+                <h3 class="text-lg font-semibold"><?= $data['surname']; ?> <?= $data['first_name']; ?> <?= $data['middle_name']; ?> Biodata</h3>
                 <ul class="ml-6 list-disc">
+                    <li><a href="#" id="add-matric-link">Add Matric Number</a></l1>
                     <li><a href="photocard.php">View Photo Card</a></l1>
                     <li><a href="mybio.php">View Biodata</a></l1>
                     <li><a href="p_results.php">View O'Level Results</a></l1>
@@ -64,8 +65,72 @@ if ($result->num_rows > 0) {
                     <li><a href="p_otherinfo.php">View Other Information</a></li>
                     <li><a href="v_course.php">View Course Form</a></li>
                 </ul>
+            </div>
+            <!-- Modal for Adding Matric Number -->
+<div id="matric-modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
+    <div class="bg-white p-6 rounded shadow-lg w-96">
+        <h2 class="text-xl font-bold mb-4">Add Matric Number</h2>
+        <form id="matric-form">
+            <div class="mb-4">
+                <label for="student-id" class="block text-gray-700 font-bold mb-2">Registration Number</label>
+                <input type="text" id="student-id" name="student_id" value="<?php echo $reg; ?>" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter Student ID" required>
+            </div>
+            <div class="mb-4">
+                <label for="matric-number" class="block text-gray-700 font-bold mb-2">Matric Number</label>
+                <input type="text" id="matric-number" value="<?= $data['matric_no']; ?>" name="matric_number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter Matric Number" required>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Update
+                </button>
+                <button type="button" id="close-modal" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
         </div>
     </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const addMatricLink = document.getElementById("add-matric-link");
+    const matricModal = document.getElementById("matric-modal");
+    const closeModalButton = document.getElementById("close-modal");
+    const matricForm = document.getElementById("matric-form");
 
+    // Show the modal
+    addMatricLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        matricModal.classList.remove("hidden");
+    });
+
+    // Hide the modal
+    closeModalButton.addEventListener("click", () => {
+        matricModal.classList.add("hidden");
+    });
+
+    // Submit the matric number update form
+    matricForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(matricForm);
+
+        // Send data to the server using fetch
+        fetch("update_matric_number.php", {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => response.text())
+            .then((data) => {
+                alert(data); // Display server response
+                matricModal.classList.add("hidden"); // Close the modal
+                matricForm.reset(); // Reset the form
+            })
+            .catch((error) => console.error("Error:", error));
+    });
+});
+
+</script>
 </body>
 </html>

@@ -76,7 +76,27 @@ $department = $_SESSION['department'];
                         <option value="Exams and Records">Exams and Records</option>
                         <option value="ICT">ICT</option>
                     </select>
-                    </div>
+                </div>
+                <!-- Academics Details -->
+                <div id="academicsDetails" class="hidden space-y-4">
+                    <!-- Course Code -->
+                    <div>
+                        <label for="course_code" class="block text-gray-700">Course Code:</label>
+                        <select id="course_code" name="course_code[]" multiple class="w-full border border-gray-300 rounded p-2">
+                            <option value="">Select Course Code</option>
+                            <?php
+                                $sql3 = "SELECT course_code FROM courses_reg order by course_code ASC";
+                                $result = $conn->query($sql3);
+                                while($data= mysqli_fetch_array($result)){
+                            ?>
+                            <option value="<?php echo $data['course_code']; ?>"><?php echo $data['course_code']; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                        <small class="text-gray-500">Hold down Ctrl (Windows) or Command (Mac) to select multiple options.</small>
+                    </div>                   
+                </div>
                 <div id="message" class="text-sm mb-4"></div>
                 <div class="text-center">
                     <button type="submit" class="w-full bg-sky-400 text-white py-2 rounded-lg hover:bg-sky-300">Create Account</button>
@@ -84,5 +104,16 @@ $department = $_SESSION['department'];
         </form>
         </div>
     </div>
+    <script>
+    // Show or hide Academics details based on department selection
+    document.getElementById('department').addEventListener('change', function () {
+      const academicsDetails = document.getElementById('academicsDetails');
+      if (this.value === 'Academics') {
+        academicsDetails.classList.remove('hidden');
+      } else {
+        academicsDetails.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>

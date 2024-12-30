@@ -13,6 +13,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $data = $result->fetch_assoc();
     $course_id = $data['course_id'];
+    $matric_no = $data['matric_no'];
     $w_amt = $data['w_amt'];
     $inv = $data['invoice_number'];
     $a_status = $data['a_status'];
@@ -74,6 +75,7 @@ $_SESSION['s_session'] = $section;
                     <div class="flex-item ml-4 mb-5">
                         <h2 class="text-1xl font-semibold text-gray-800">Welcome <a href="#" class="text-green-600"><?= $data['surname'] ?> <?= $data['first_name'] ?> <?= $data['middle_name'] ?></a></h2>
                         <p class="text-gray-600"><span class="text-green-600"><?php echo $username; ?></span></p>
+                        <p class="text-gray-600 mb-6"><span class="text-green-600"><?php echo $matric_no; ?></span></p>
                         <p class="text-gray-600 mb-6"><span class="text-green-600"><?php echo $course; ?></span></p>
                         <a href="logout.php" class="block text-white text-center bg-red-500 py-2 px-4 rounded-md hover:bg-red-600">Logout</a>
                         

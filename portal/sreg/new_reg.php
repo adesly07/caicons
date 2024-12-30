@@ -43,7 +43,7 @@ $serial_number = $_SESSION['serial_number'];
             <div>
                 <form id="applicantForm" action="submit_applicant.php" method="POST">
                     <div class="mb-4 border-b border-gray-400 hover:border-blue-900">
-                        <label class="block font-medium text-gray-700">Registration Number</label>
+                        <label class="block font-medium text-gray-700">Registration/Matric Number</label>
                         <input type="text" name="reg_num" required class="w-full p-1 text-sky-600 focus:outline-none" />
                         
                     </div>

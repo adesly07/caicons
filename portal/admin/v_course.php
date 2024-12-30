@@ -57,10 +57,15 @@ if ($result2->num_rows > 0) {
                 <div class="mb-4">
                     <label for="level" class="block text-gray-700 font-semibold mb-2">Level</label>
                         <select id="level" name ="level" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400">
-                            <option value="Year 1">Year 1</option>
-                            <option value="Year 2">Year 2</option>
-                            <option value="Year 3">Year 3</option>
-                            <option value="Year 4">Year 4</option>
+                        <?php
+                                $sql4 = "SELECT * FROM level order by id ASC";
+                                $result4 = $conn->query($sql4);
+                                while($rows= mysqli_fetch_array($result4)){
+                            ?>
+                                <option value="<?php echo $rows['level_name']; ?>"><?php echo $rows['level_name']; ?></option>
+                            <?php 
+                                }
+                            ?>
                         </select>
                 </div>
                 <div class="mb-4">

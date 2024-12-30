@@ -9,6 +9,7 @@ if ($result->num_rows > 0) {
         $reg = $row['reg_num'];
         echo "<tr>";
         echo "<td class='py-3 px-6'>" . "<a href='v_applicant.php?reg_num=$reg'>" . $row['reg_num'] . "</a>" . "</td>";
+        echo "<td class='py-3 px-6'>" . "<a href='v_result.php?reg_num=$reg'>" . $row['matric_no'] . "</a>" . "</td>";
         echo "<td class='py-3 px-6'>" . $row['surname'] . " " . $row['first_name'] . " " . $row['middle_name'] . "</td>";
         echo "<td class='py-3 px-6'>" . $row['phone_number'] . "</td>";
         echo "<td class='py-3 px-6'>" . $row['email'] . "</td>";

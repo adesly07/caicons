@@ -41,7 +41,7 @@ require 'vendor/autoload.php'; // Ensure Composer autoloader is included
      $mail->send();
      echo  "Registration successful. Your password has been sent to your email. <br/> Click <a href='https://www.caicons.edu.ng/portal/sreg/login.php'>here</a> to continue your registration.";
  } catch (Exception $e) {
-     echo json_encode(["success" => false, "message" => "Registration successful but email could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
+     header('location:v_pwd.php');
  }
 
     

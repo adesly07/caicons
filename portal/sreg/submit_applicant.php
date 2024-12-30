@@ -13,7 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nationality = mysqli_real_escape_string($conn, $_POST['nationality']);
     $course_id = mysqli_real_escape_string($conn, $_POST['course_id']);
     $section = mysqli_real_escape_string($conn, $_POST['section']);
-    // Retrieve the last invoice number
+    $sql3 = "SELECT reg_num FROM applicants WHERE reg_num = '$reg_num'";
+    $result = $conn->query($sql3);
+    if ($result->num_rows > 0) {
+        $_SESSION['reg_num'] = $reg_num;
+        $_SESSION['first_name'] = $first_name;
+        $_SESSION['email'] = $email;
+        header('location:recordexit.php');
+    } else {
     $pwd = substr(str_shuffle(strtoupper(sha1(rand() . time() . "my salt string"))),0, 8);
     $pwd_hash = password_hash($pwd, PASSWORD_BCRYPT);
     if($section=='2023/2024'){
@@ -40,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+}
     $conn->close();
 }
 ?>

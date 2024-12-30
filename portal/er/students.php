@@ -54,6 +54,7 @@ $section = $_SESSION['s_session'];
                 <thead class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                     <tr>
                         <th class="py-3 px-6 text-left">REGISTRATION NUMBER</th>
+                        <th class="py-3 px-6 text-left">Matric Number</th>
                         <th class="py-3 px-6 text-left">Names</th>
                         <th class="py-3 px-6 text-left">Phone Number</th>
                         <th class="py-3 px-6 text-left">Email Address</th>

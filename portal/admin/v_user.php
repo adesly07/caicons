@@ -41,9 +41,12 @@ $department = $_SESSION['department'];
                     
                     <thead>
                         <tr class="bg-gray-200">
+                            <th class="px-4 py-2">Department</th>
                             <th class="px-4 py-2">Name</th>
                             <th class="px-4 py-2">Username</th>
                             <th class="px-4 py-2">Password</th>
+                            <th class="px-4 py-2">Course Code</th>
+                            <th class="px-4 py-2">Level</th>
                             <th class="px-4 py-2">Actions</th>
                         </tr>
                     </thead>
@@ -54,8 +57,10 @@ $department = $_SESSION['department'];
                             $result = mysqli_query($conn, $query);
                             if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                            $course_codes = $row['course_code'] ? implode(', ', explode(',', $row['course_code'])) : 'N/A';
                         ?>
                         <tr>
+                            <td class="border px-4 py-2"><?php echo $row['department'] ?></td>
                             <td class="border px-4 py-2"><?php echo $row['u_name'] ?></td>
                             <td class="border px-4 py-2">
                             <?php echo $row['username'] ?>                         
@@ -63,6 +68,10 @@ $department = $_SESSION['department'];
                             <td class="border px-4 py-2">
                             <?php echo ($row['p_decr']) ?>                         
                             </td>
+                            <td class="border px-4 py-2">
+                            <?php echo ($row['course_code']) ?>                         
+                            </td>
+                            
                             <td class="border px-4 py-2">
                                 <a href="delete_user.php?id=<?php echo $row['id'] ?>" class="text-red-600 hover:text-red-800">
                                     <img src="../../assets/images/delete.png" alt="Logo" width="20" height="20">

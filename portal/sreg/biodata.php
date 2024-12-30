@@ -40,6 +40,20 @@ if ($result2->num_rows > 0) {
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss-jit-cdn@tailwindcss/latest/dist/tailwind.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href=
+"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css"
+        rel="stylesheet" />
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js">
+</script>
 </head>
 <body class="bg-white h-screen flex flex-col">
 
@@ -71,7 +85,7 @@ if ($result2->num_rows > 0) {
                     </div>
                     <div class="mb-4">
                         <label for="dob" class="block text-gray-700 font-semibold">Date of Birth</label>
-                        <input type="date" id="dob" name="dob" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required>
+                        <input type="text" id="dob" name="dob" placeholder="MM-DD-YYYY" class="date w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300" required>
                     </div>
                     <div class="mb-4">
                         <label for="sex" class="block text-gray-700 font-semibold">Sex</label>
@@ -114,6 +128,10 @@ if ($result2->num_rows > 0) {
             </div>
         </main>
     </div>
-
+    <script type="text/javascript">
+        $(".date").datepicker({
+            format: "dd-mm-yyyy",
+        });
+    </script>
 </body>
 </html>
