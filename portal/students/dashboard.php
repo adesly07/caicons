@@ -41,7 +41,9 @@ $sql3 = "SELECT * FROM current where s_category = 'Staylite'";
 $result3 = $conn->query($sql3);
 $row3 = $result3->fetch_assoc();
 $section = $row3['s_session'];
+$r_status = $row3['r_status'];
 $_SESSION['s_session'] = $section;
+$_SESSION['r_status'] = $r_status;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,9 +76,9 @@ $_SESSION['s_session'] = $section;
                     </div>
                     <div class="flex-item ml-4 mb-5">
                         <h2 class="text-1xl font-semibold text-gray-800">Welcome <a href="#" class="text-green-600"><?= $data['surname'] ?> <?= $data['first_name'] ?> <?= $data['middle_name'] ?></a></h2>
-                        <p class="text-gray-600"><span class="text-green-600"><?php echo $username; ?></span></p>
-                        <p class="text-gray-600 mb-6"><span class="text-green-600"><?php echo $matric_no; ?></span></p>
-                        <p class="text-gray-600 mb-6"><span class="text-green-600"><?php echo $course; ?></span></p>
+                        <p class="text-gray-600">Registration Number: <span class="text-green-600"><?php echo $username; ?></span></p>
+                        <p class="text-gray-600">Matric Number: <span class="text-green-600"><?php echo $matric_no; ?></span></p>
+                        <p class="text-gray-600 mb-6">Course: <span class="text-green-600"><?php echo $course; ?></span></p>
                         <a href="logout.php" class="block text-white text-center bg-red-500 py-2 px-4 rounded-md hover:bg-red-600">Logout</a>
                         
                     </div>
@@ -123,7 +125,7 @@ $_SESSION['s_session'] = $section;
                         <h3 class="text-lg font-semibold">Results</h3>
                         <ul>
                             <li><a href="c_result.php">Check Result</a></li>
-                            <li><a href="c_transcript.php">Check Transcript</a></li>
+                            <li><a href="#">Check Transcript</a></li>
                         </ul>
                     </div>
                     <div class="bg-white p-4 shadow-md rounded-lg">

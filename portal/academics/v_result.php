@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <caption class="text-center p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-                <?php echo $data['surname'] . " " . $data['first_name'] . " " . $data['middle_name']; ?> SCORES <?php echo $section; ?>
+                <?php echo $data['surname'] . " " . $data['first_name'] . " " . $data['middle_name']; ?> SCORES <?php echo $section; ?> SESSION
             </caption>
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>

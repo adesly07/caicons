@@ -84,6 +84,7 @@ $conn->close();
             <h3 class="text-xl font-bold">Student Details</h3>
             <p><strong>Name:</strong> <?= $data['surname'] ?> <?= $data['first_name'] ?> <?= $data['middle_name'] ?></p>
             <p><strong>Registration Number:</strong> <?= $data['reg_num'] ?></p>
+            <p><strong>Matric Number:</strong> <?= $data['matric_no'] ?></p>
             <p><strong>Email:</strong> <?= $data['email'] ?></p>
             <p><strong>Phone:</strong> <?= $data['phone_number'] ?></p>
             <p><strong>Course:</strong> <?php echo $course; ?></p>

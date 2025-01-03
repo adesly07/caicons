@@ -13,9 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cat = $_POST['category'];
     $semester = $_POST['semester'];
     $section = $_POST['section'];
-    $query = "UPDATE current set s_semester = ?, s_session = ? WHERE s_category = ?";
+    $r_status = $_POST['r_status'];
+    $query = "UPDATE current set s_semester = ?, s_session = ?, r_status = ? WHERE s_category = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("sss", $semester, $section, $cat);
+    $stmt->bind_param("ssss", $semester, $section, $r_status, $cat);
 
     if ($stmt->execute()) {
         echo "<script>alert('Current updated successfully'); window.location.href='current.php';</script>";
@@ -83,7 +84,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <option value="Staylite">Staylite</option>
                                 <option value="Applicant">Applicant</option>
                         </select>
-                </div>           
+                </div>
+                <div class="mb-4">
+                    <label for="r_status" class="block text-gray-700 font-semibold mb-2">Select Result Status</label>
+                        <select id="r_status" name ="r_status" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-400">
+                                <option value="Pending">Pending</option>
+                                <option value="Released">Released</option>
+                        </select>
+                </div>                
                 <div class="text-center">
                     <button type="submit" class="w-full bg-sky-400 text-white py-2 rounded-lg hover:bg-sky-300">Update</button>
                 </div>
@@ -101,6 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <th class="px-4 py-2">Student Category</th>
                             <th class="px-4 py-2">Semester</th>
                             <th class="px-4 py-2">Session</th>
+                            <th class="px-4 py-2">Result status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -115,6 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <td class="border px-4 py-2"><?php echo $row['s_category'] ?></td>
                             <td class="border px-4 py-2"><?php echo $row['s_semester'] ?></td>
                             <td class="border px-4 py-2"><?php echo $row['s_session'] ?></td>
+                            <td class="border px-4 py-2"><?php echo $row['r_status'] ?></td>
                         </tr>
                     </tbody>
                     <?php } }?>
